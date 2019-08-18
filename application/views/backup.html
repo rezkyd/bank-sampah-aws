@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bank Sampah Malang</title>
+
+    <meta name="keywords" content="">
+
+    <link href="<?php echo base_url();?>css/roboto.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.min.css">
+    <link href="<?php echo base_url();?>css/animate.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="<?php echo base_url();?>css/custom.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/owl.carousel.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/owl.theme.css" rel="stylesheet">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoL_MC0xTETDBStgitfKhJwRBuoyIhBfc&callback&callback=initMap"></script>
+
+    <script type="text/javascript">
+        function showPosition(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showMap, showError);
+
+            } else{s
+                alert("Sorry, your browser does not support HTML5 geolocation.");
+            }
+        }
+         
+        // Define callback function for successful attempt
+        function showMap(position){
+            // Get location data
+            lat = position.coords.latitude;
+            long = position.coords.longitude;
+            var latlong = new google.maps.LatLng(lat, long);
+
+                      
+            var myOptions = {
+                center: latlong,    
+                zoom: 16,
+                mapTypeControl: true,
+                navigationControlOptions: {style:google.maps.NavigationControlStyle.SMALL}
+            }
+            
+            var map = new google.maps.Map(document.getElementById("embedMap"), myOptions);
+            var marker = new google.maps.Marker({position:latlong, map:map, title:"You are here!"});
+            var pos = cekPosisi(lat,long);
+        }
+         
+        // Define callback function for failed attempt
+        function showError(error){
+            if(error.code == 1){
+                result.innerHTML = "You've decided not to share your position, but it's OK. We won't ask you again.";
+            } else if(error.code == 2){
+                result.innerHTML = "The network is down or the positioning service can't be reached.";
+            } else if(error.code == 3){
+                result.innerHTML = "The attempt timed out before it could get the location data.";
+            } else{
+                result.innerHTML = "Geolocation failed due to unknown error.";
+            }
+        }
+        function cekPosisi(lat, long){
+            var x = document.getElementById("pos");
+            x.innerHTML = "Latitude: " + lat + "<br>Longitude: " + long
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div id="all">
+
+        <header>
+
+            <!-- *** TOP ***
+_________________________________________________________ -->
+            <div id="top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-5 contact">
+                            <p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
+                            <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                            </p>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="login">
+                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Login</span></a>
+                              
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- *** TOP END *** -->
+
+            <!-- *** NAVBAR ***
+    _________________________________________________________ -->
+
+            <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+                <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+                    <div class="container">
+                        <div class="navbar-collapse collapse" id="navigation">
+
+                            <ul class="nav navbar-nav navbar-right">
+                               <li class="dropdown active">
+                                    <a href="<?php echo site_url('c_akun/profilAkun');?>">Profil </a>
+                                </li>
+                                <li >
+                                      <a href="<?php echo site_url('c_buku');?>"> Buku Tabungan</a>
+                                  </li>
+                                <li >
+                                    <a href="<?php echo site_url('c_nonmember/cekHarga');?>">Harga Sampah BSM</a>
+                                </li>
+                                <li >
+                                    <a href="<?php echo site_url('c_jemput/buatJemput');?>">Jemput Sampah</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </header>
+
+        <div id="heading-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1>JEMPUT SAMPAH</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="container" id="contact">
+
+                <section>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form class="form-horizontal" method="post" action="<?php echo site_url('c_jemput/insert'); ?>">
+                                <div class="form-group row ">
+                                    <label class="col-sm-4" >Nomor Rekening</label>
+                                    <input class="col-sm-4" type="text" class="form-control" name="noRek">
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4" >Nomor HP</label>
+                                    <input class="col-sm-4" type="text" class="form-control" name="HP">
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4" >Tanggal</label>
+                                    <input class="col-sm-4" type="date" class="form-control" name="tanggal">
+                                </div>
+                                <div class="form-group row">
+                                  <label class="col-sm-4">Jadwal Pengambilan</label>
+                                  <div class="col-sm-4 select">
+                                    <select name="kodeSampah" class="form-control" value="<?php echo $waktu; ?>">
+                                          <option>Pagi</option>
+                                          <option>Siang</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4" >Alamat Lengkap</label>
+                                    <textarea class="col-sm-4" name="alamat" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4" >Lokasi Penjemputan</label>
+                                    <button  type="button" data-toggle="modal" data-target="#lokasi-modal" >Cari Lokasi</button>
+                                </div>
+                    
+                                <div class="line"></div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 offset-sm-2">
+                                        <button type="submit" class="btn btn-template-main">Pesan Jemput Sampah</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+ 
+                        
+                    </div>
+
+
+                </section>
+
+            </div>
+            <!-- /#contact.container -->
+        </div>
+
+        <div class="modal fade" id="lokasi-modal" tabindex="-1" role="dialog" aria-labelledby="lokasi" aria-hidden="true" >
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="lokasi">Lokasi Penjemputan</h4>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" onclick="showPosition();">Cari Lokasi</button>
+    
+                        <form method="post" >
+                            <div id="embedMap"  style="background-color: grey ;width: 400px; height: 300px;"> </div>
+                            <p class="text-center">
+                                <button class="btn btn-template-main" type="submit" name="submit"><i class="fa fa-sign-in"></i> Pilih loaksi</button>
+                            </p>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!-- *** COPYRIGHT ***
+_________________________________________________________ -->
+
+        <div id="copyright">
+            <div class="container">
+                <div class="col-md-12">
+                    <p class="pull-left">&copy; 2017. Bank Sampah Malang</p>
+                    <p class="pull-right">Template by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- /#copyright -->
+    </div>
+
+    <!-- #### JAVASCRIPT FILES ### -->
+
+    <script src="<?php echo base_url();?>js/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="<?php echo base_url();?>js/jquery-1.11.0.min.js"><\/script>')
+    </script>
+    <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>js/jquery.cookie.js"></script>
+    <script src="<?php echo base_url();?>js/waypoints.min.js"></script>
+    <script src="<?php echo base_url();?>js/jquery.counterup.min.js"></script>
+    <script src="<?php echo base_url();?>js/jquery.parallax-1.1.3.js"></script>
+    <script src="<?php echo base_url();?>js/front.js"></script>
+    <script src="<?php echo base_url();?>js/owl.carousel.min.js"></script>
+
+
+</body>
+</html>
+
