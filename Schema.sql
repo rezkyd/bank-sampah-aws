@@ -27,7 +27,7 @@ CREATE USER 'bsmuser'@'%';
 GRANT ALL PRIVILEGES ON bsmdb.* to 'bsmuser'@'%' IDENTIFIED BY 'bsmpassword'; 
 FLUSH PRIVILEGES;
 
-
+USE bsmdb;
 -- --------------------------------------------------------
 
 --
