@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 -- Database: `bsmdb`
 --
 
-CREATE DATABASE bsmdb;
+CREATE DATABASE IF NOT EXISTS bsmdb;
 CREATE USER 'bsmuser'@'localhost'; 
 GRANT ALL PRIVILEGES ON bsmdb.* to 'bsmuser'@'localhost' IDENTIFIED BY 'bsmpassword'; 
 CREATE USER 'bsmuser'@'%'; 
