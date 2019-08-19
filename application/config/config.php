@@ -35,7 +35,7 @@ $config['base_url'] = 'http://bsm-web-loadbalancer-632989805.us-east-1.elb.amazo
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
