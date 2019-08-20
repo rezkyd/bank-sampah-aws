@@ -10,11 +10,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	See: https://codeigniter.com/user_guide/libraries/caching.html#memcached
 |
 */
-<<<<<<< HEAD
-$config = array(
-	'default' => array(
+
+$config['memcached'] = array(
 		'hostname' => 'cachebsm.hqfv4d.cfg.use1.cache.amazonaws.com',
 		'port'     => '11211',
 		'weight'   => '1',
-	
-);
+	);
