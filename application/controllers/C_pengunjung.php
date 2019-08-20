@@ -20,6 +20,7 @@ class C_pengunjung extends CI_Controller {
                     );
 					
         if (!$data = $this->cache->memcached->get('header')){
+			echo "miss cache!";
             $data = $this->load->view('v_header');
             $this->cache->memcached->save('header',$data, 3600);
         }
