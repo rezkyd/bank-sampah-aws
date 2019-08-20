@@ -17,4 +17,5 @@ $config = array(
 		'port'     => '11211',
 		'weight'   => '1',
 	
-);
+		)
+	);
