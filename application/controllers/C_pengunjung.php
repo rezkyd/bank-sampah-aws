@@ -19,6 +19,7 @@ class C_pengunjung extends CI_Controller {
                     );
 
         $this->load->driver('cache');   
+        echo "memcached support:".$this->cache->memcached->is_supported();
         if (!$data = $this->cache->memcached->get('header')){
             $data = $this->load->view('v_header');
             $this->cache->memcached->save('header',$data, 3600);
