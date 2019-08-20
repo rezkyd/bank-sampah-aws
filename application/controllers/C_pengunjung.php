@@ -5,7 +5,6 @@ class C_pengunjung extends CI_Controller {
         $this->load->model('modNasabah');
         $this->load->model('modPetugas');
         $this->load->model('modSampah');
-        $this->load->driver('cache');   
     }
 
     public function index(){
@@ -19,6 +18,7 @@ class C_pengunjung extends CI_Controller {
                       'NasabahInstansi' => $NasabahInstansi
                     );
 				
+        $this->load->driver('cache');   
         if (!$cachedata = $this->cache->memcached->get('header')){
 			echo "miss cache!";
             //$cachedata = $this->load->view('v_header');
