@@ -19,7 +19,7 @@ class C_pengunjung extends CI_Controller {
                     );
 				
         $this->load->driver('cache');   
-        if (!$cachedata = $this->cache->memcached->get('header')){
+        //if (!$cachedata = $this->cache->memcached->get('header')){
 			echo "miss cache!";
             //$cachedata = $this->load->view('v_header');
 			$cachdedata = "testing";
@@ -28,7 +28,7 @@ class C_pengunjung extends CI_Controller {
 			} else{
 				echo "saving failed";
 			}
-        }
+        //}
                    
         $this->load->view('v_header');
         $this->load->view('v_beranda', $data);
