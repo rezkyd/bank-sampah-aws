@@ -18,8 +18,8 @@ class C_pengunjung extends CI_Controller {
                       'NasabahInstansi' => $NasabahInstansi
                     );
 
-        $this->load->view('v_header');
-        //$this->load->driver('cache', array('adapter' => 'memcached', 'backup' => 'v_header'));
+        //$this->load->view('v_header');
+        $this->load->driver('cache', array('adapter' => 'memcached', 'backup' => 'v_header'));
         $this->load->view('v_beranda', $data);
         $this->load->view('v_footer');
     }
