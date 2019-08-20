@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $config = array(
-	'default' => array(
+	'memcached' => array(
 		'hostname' => 'cachebsm.hqfv4d.cfg.use1.cache.amazonaws.com',
 		'port'     => '11211',
 		'weight'   => '1',
