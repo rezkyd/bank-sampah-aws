@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config = array(
 	'default' => array(
-		'hostname' => 'bsmcached.jtw0ue.cfg.use1.cache.amazonaws.com',
+		'hostname' => 'bsmcached.jtw0ue.0001.use1.cache.amazonaws.com',
 		'port'     => '11211',
 		'weight'   => '1',
 	),
