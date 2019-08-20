@@ -18,12 +18,11 @@ class C_pengunjung extends CI_Controller {
                       'NasabahInstansi' => $NasabahInstansi
                     );
 
-            $this->load->driver('cache');   
-                if (!$data = $this->cache->memcached->get('header')){
-                    echo 'Saving to the cache!<br />';
-                    $data = $this->load->view('v_header');
-                    $this->cache->memcached->save('header',$data, 3600);
-                }
+        $this->load->driver('cache');   
+        if (!$data = $this->cache->memcached->get('header')){
+            $data = $this->load->view('v_header');
+            $this->cache->memcached->save('header',$data, 3600);
+        }
                     
         //$this->load->view('v_header');
         $this->load->view('v_beranda', $data);
