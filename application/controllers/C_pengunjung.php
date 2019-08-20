@@ -23,7 +23,6 @@ class C_pengunjung extends CI_Controller {
                     echo 'Saving to the cache!<br />';
                     $data = $this->load->view('v_header');
                     $this->cache->memcached->save('header',$data, 3600);
-                
                 }
                     
         //$this->load->view('v_header');
