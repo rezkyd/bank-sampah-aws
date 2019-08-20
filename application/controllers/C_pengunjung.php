@@ -25,7 +25,7 @@ class C_pengunjung extends CI_Controller {
 
         $this->load->driver('cache');
             if($this->cache->memcached->is_supported()){
-                    $data = $this->cache->memcached->get('v_header');
+                    $data = $this->cache->memcached->get($this->load->view('v_header'));
                 if (!$data){
                     echo 'cache miss!<br />';
                     $data = 'bar';
