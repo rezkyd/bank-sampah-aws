@@ -19,9 +19,23 @@ class C_pengunjung extends CI_Controller {
                     );
 
         //$this->load->view('v_header');
-        $this->load->driver('cache', array('adapter' => 'memcached', 'backup' => 'v_header'));
+        //$this->load->driver('cache', array('adapter' => 'memcached', 'backup' => 'v_header'));
         $this->load->view('v_beranda', $data);
         $this->load->view('v_footer');
+
+        $this->load->driver('cache');
+            if($this->cache->memcached->is_supported()){
+                    $data = $this->cache->memcached->get('v_header');
+                if (!$data){
+                    echo 'cache miss!<br />';
+                    $data = 'bar';
+                    $this->cache->memcached->save('v_header',$data, 600);
+                }
+                    echo $data;
+                    echo '<pre>';
+                    var_dump($this->cache->memcached->cache_info());
+                echo '</pre>';
+            }
     }
 
     public function login() {
