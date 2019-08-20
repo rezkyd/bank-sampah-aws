@@ -18,7 +18,7 @@ class C_pengunjung extends CI_Controller {
                       'NasabahSekolah' => $NasabahSekolah,
                       'NasabahInstansi' => $NasabahInstansi
                     );
-					
+		/*			
         if (!$cachedata = $this->cache->memcached->get('header')){
 			echo "miss cache!";
             $cachedata = $this->load->view('v_header');
@@ -29,8 +29,8 @@ class C_pengunjung extends CI_Controller {
 				echo "saving failed";
 			}
         }
-                    
-        //$this->load->view('v_header');
+               */     
+        $this->load->view('v_header');
         $this->load->view('v_beranda', $data);
         $this->load->view('v_footer');
 
