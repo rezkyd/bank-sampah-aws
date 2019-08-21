@@ -19,7 +19,7 @@ class modPenyetoran extends CI_Model{
     }
     
     public function InsertDetail($data){
-        $this->tabel = 'detailPenyetoran';
+        $this->tabel = 'detailpenyetoran';
         $this->query = $this->db->insert_batch($this->tabel, $data);
         return $this->query; 
     }
@@ -31,7 +31,7 @@ class modPenyetoran extends CI_Model{
     }
 
     public function DeleteDetail($noNota){
-        $this->tabel = 'detailPenyetoran';
+        $this->tabel = 'detailpenyetoran';
         $this->query = $this->db->delete($this->tabel, $noNota); 
         return $this->query;
     }
@@ -43,7 +43,7 @@ class modPenyetoran extends CI_Model{
 	}
 
     public function GetWhereDetail($data){ 
-        $this->tabel = 'detailPenyetoran';
+        $this->tabel = 'detailpenyetoran';
         $this->query=$this->db->get_where($this->tabel, $data);
         return $this->query->result_array();
     }
