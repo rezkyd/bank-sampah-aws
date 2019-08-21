@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'bsm-database.cc7bdzqsfoha.us-east-1.rds.amazonaws.com',
 	'username' => 'bsmuser',
 	'password' => 'bsmpassword',
 	'database' => 'bsmdb',
