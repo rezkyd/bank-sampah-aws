@@ -19,8 +19,8 @@ class C_pengunjung extends CI_Controller {
                     );
 				
         $this->load->driver('cache');   
-        //if (!$cachedata = $this->cache->memcached->get('header')){
-			echo var_dump($this->cache->memcached->cache_info());
+        if (!$cachedata = $this->cache->memcached->get('header')){
+			//echo var_dump($this->cache->memcached->cache_info());
             //$cachedata = $this->load->view('v_header');
 			$cachedata = "testing";
 			if($success = $this->cache->memcached->save('header',$cachedata, 3600)){
@@ -28,7 +28,7 @@ class C_pengunjung extends CI_Controller {
 			} else{
 				echo "saving failed";
 			}
-        //}
+        }
                    
         $this->load->view('v_header');
         $this->load->view('v_beranda', $data);
