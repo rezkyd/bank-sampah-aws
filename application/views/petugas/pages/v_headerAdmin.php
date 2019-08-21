@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
   
-    <link rel="stylesheet" href="<?php echo base_url();?>adm/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>adm/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>adm/css/fontastic.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>adm/css/robotto.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>adm/css/grasp_mobile_progress_circle-1.0.0.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>adm/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>adm/css/style.default.css" id="theme-stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url();?>adm/css/custom.css">
-    <!-- <link rel="shortcut icon" href="<?php echo base_url();?>adm/favicon.png"> -->
-    <link rel="shortcut icon" href="<?php echo base_url();?>adm/vendor/jquery/jquery.js">
+    <link rel="stylesheet" href="https://projectakhir.s3.amazonaws.com/adm/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://projectakhir.s3.amazonaws.com/adm/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://projectakhir.s3.amazonaws.com/adm/css/fontastic.css">
+    <link rel="stylesheet" href="https://projectakhir.s3.amazonaws.com/adm/css/robotto.css">
+    <link rel="stylesheet" href="https://projectakhir.s3.amazonaws.com/adm/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <link rel="stylesheet" href="https://projectakhir.s3.amazonaws.com/adm/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://projectakhir.s3.amazonaws.com/adm/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="https://projectakhir.s3.amazonaws.com/adm/css/custom.css">
+    <!-- <link rel="shortcut icon" href="https://projectakhir.s3.amazonaws.com/adm/favicon.ico"> -->
+    <link rel="shortcut icon" href="https://projectakhir.s3.amazonaws.com/adm/vendor/jquery/jquery.js">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

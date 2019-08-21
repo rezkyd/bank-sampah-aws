@@ -34,7 +34,7 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-sm-4 right">
-                                    <img src="img/logobsm.png" alt="">
+                                    <img src="https://projectakhir.s3.amazonaws.com/img/logobsm.png" alt="">
                                 </div>
                                 <div class="col-sm-8">
                                     <h2 class="text-uppercase">Bank Sampah Malang</h2>

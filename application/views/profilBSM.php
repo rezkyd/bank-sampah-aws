@@ -14,20 +14,20 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.default.css" rel="stylesheet" id="theme-stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
-    <link href="<?php echo base_url();?>css/owl.carousel.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>css/owl.theme.css" rel="stylesheet">
+    <link href="https://projectakhir.s3.amazonaws.com/css/animate.css" rel="stylesheet">
+    <link href="https://projectakhir.s3.amazonaws.com/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="https://projectakhir.s3.amazonaws.com/css/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://projectakhir.s3.amazonaws.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-152x152.png" />
+    <link href="https://projectakhir.s3.amazonaws.com/css/owl.carousel.css" rel="stylesheet">
+    <link href="https://projectakhir.s3.amazonaws.com/css/owl.theme.css" rel="stylesheet">
 </head>
 
 <body>
@@ -77,8 +77,8 @@ _________________________________________________________ -->
                         <div class="navbar-header">
 
                             <a class="navbar-brand home" href="index.html">
-                                <img src="img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
-                                <img src="img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
+                                <img src="https://projectakhir.s3.amazonaws.com/img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <img src="https://projectakhir.s3.amazonaws.com/img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
                             </a>
                             <div class="navbar-buttons">
                                 <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -114,7 +114,7 @@ _________________________________________________________ -->
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img src="img/template-easy-customize.png" class="img-responsive hidden-xs" alt="">
+                                                        <img src="https://projectakhir.s3.amazonaws.com/img/template-easy-customize.png" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <h5>Shortcodes</h5>
@@ -160,7 +160,7 @@ _________________________________________________________ -->
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img src="img/template-homepage.png" class="img-responsive hidden-xs" alt="">
+                                                        <img src="https://projectakhir.s3.amazonaws.com/img/template-homepage.png" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <h5>Portfolio</h5>
@@ -466,16 +466,16 @@ _________________________________________________________ -->
                 <section>
                     <div class="project owl-carousel">
                         <div class="item">
-                            <img src="img/main-slider1.jpg" alt="" class="img-responsive">
+                            <img src="https://projectakhir.s3.amazonaws.com/img/main-slider1.jpg" alt="" class="img-responsive">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="img/main-slider2.jpg" alt="">
+                            <img class="img-responsive" src="https://projectakhir.s3.amazonaws.com/img/main-slider2.jpg" alt="">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="img/main-slider3.jpg" alt="">
+                            <img class="img-responsive" src="https://projectakhir.s3.amazonaws.com/img/main-slider3.jpg" alt="">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="img/main-slider4.jpg" alt="">
+                            <img class="img-responsive" src="https://projectakhir.s3.amazonaws.com/img/main-slider4.jpg" alt="">
                         </div>
                     </div>
                     <!-- /.project owl-slider -->
@@ -523,7 +523,7 @@ _________________________________________________________ -->
                         <div class="col-sm-6 col-md-3">
                             <div class="box-image">
                                 <div class="image">
-                                    <img src="img/portfolio-1.jpg" alt="" class="img-responsive">
+                                    <img src="https://projectakhir.s3.amazonaws.com/img/portfolio-1.jpg" alt="" class="img-responsive">
                                 </div>
                                 <div class="bg"></div>
                                 <div class="name">
@@ -543,7 +543,7 @@ _________________________________________________________ -->
                         <div class="col-sm-6 col-md-3">
                             <div class="box-image">
                                 <div class="image">
-                                    <img src="img/portfolio-2.jpg" alt="" class="img-responsive">
+                                    <img src="https://projectakhir.s3.amazonaws.com/img/portfolio-2.jpg" alt="" class="img-responsive">
                                 </div>
                                 <div class="bg"></div>
                                 <div class="name">
@@ -563,7 +563,7 @@ _________________________________________________________ -->
                         <div class="col-sm-6 col-md-3">
                             <div class="box-image">
                                 <div class="image">
-                                    <img src="img/portfolio-3.jpg" alt="" class="img-responsive">
+                                    <img src="https://projectakhir.s3.amazonaws.com/img/portfolio-3.jpg" alt="" class="img-responsive">
                                 </div>
                                 <div class="bg"></div>
                                 <div class="name">
@@ -583,7 +583,7 @@ _________________________________________________________ -->
                         <div class="col-sm-6 col-md-3">
                             <div class="box-image">
                                 <div class="image">
-                                    <img src="img/portfolio-4.jpg" alt="" class="img-responsive">
+                                    <img src="https://projectakhir.s3.amazonaws.com/img/portfolio-4.jpg" alt="" class="img-responsive">
                                 </div>
                                 <div class="bg"></div>
                                 <div class="name">
@@ -669,7 +669,7 @@ _________________________________________________________ -->
                         <div class="item same-height-row clearfix">
                             <div class="image same-height-always">
                                 <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
+                                    <img class="img-responsive" src="https://projectakhir.s3.amazonaws.com/img/detailsquare.jpg" alt="">
                                 </a>
                             </div>
                             <div class="name same-height-always">
@@ -680,7 +680,7 @@ _________________________________________________________ -->
                         <div class="item same-height-row clearfix">
                             <div class="image same-height-always">
                                 <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
+                                    <img class="img-responsive" src="https://projectakhir.s3.amazonaws.com/img/detailsquare.jpg" alt="">
                                 </a>
                             </div>
                             <div class="name same-height-always">
@@ -691,7 +691,7 @@ _________________________________________________________ -->
                         <div class="item same-height-row clearfix">
                             <div class="image same-height-always">
                                 <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
+                                    <img class="img-responsive" src="https://projectakhir.s3.amazonaws.com/img/detailsquare.jpg" alt="">
                                 </a>
                             </div>
                             <div class="name same-height-always">
@@ -734,32 +734,32 @@ _________________________________________________________ -->
                     <div class="photostream">
                         <div>
                             <a href="#">
-                                <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
+                                <img src="https://projectakhir.s3.amazonaws.com/img/detailsquare.jpg" class="img-responsive" alt="#">
                             </a>
                         </div>
                         <div>
                             <a href="#">
-                                <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
+                                <img src="https://projectakhir.s3.amazonaws.com/img/detailsquare2.jpg" class="img-responsive" alt="#">
                             </a>
                         </div>
                         <div>
                             <a href="#">
-                                <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
+                                <img src="https://projectakhir.s3.amazonaws.com/img/detailsquare3.jpg" class="img-responsive" alt="#">
                             </a>
                         </div>
                         <div>
                             <a href="#">
-                                <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
+                                <img src="https://projectakhir.s3.amazonaws.com/img/detailsquare3.jpg" class="img-responsive" alt="#">
                             </a>
                         </div>
                         <div>
                             <a href="#">
-                                <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
+                                <img src="https://projectakhir.s3.amazonaws.com/img/detailsquare2.jpg" class="img-responsive" alt="#">
                             </a>
                         </div>
                         <div>
                             <a href="#">
-                                <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
+                                <img src="https://projectakhir.s3.amazonaws.com/img/detailsquare.jpg" class="img-responsive" alt="#">
                             </a>
                         </div>
                     </div>
@@ -800,20 +800,20 @@ _________________________________________________________ -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
-        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+        window.jQuery || document.write('<script src="https://projectakhir.s3.amazonaws.com/js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="js/front.js"></script>
+    <script src="https://projectakhir.s3.amazonaws.com/js/jquery.cookie.js"></script>
+    <script src="https://projectakhir.s3.amazonaws.com/js/waypoints.min.js"></script>
+    <script src="https://projectakhir.s3.amazonaws.com/js/jquery.counterup.min.js"></script>
+    <script src="https://projectakhir.s3.amazonaws.com/js/jquery.parallax-1.1.3.js"></script>
+    <script src="https://projectakhir.s3.amazonaws.com/js/front.js"></script>
 
     
 
     <!-- owl carousel -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://projectakhir.s3.amazonaws.com/js/owl.carousel.min.js"></script>
 
 
 

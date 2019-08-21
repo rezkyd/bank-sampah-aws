@@ -14,20 +14,20 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link href="<?php echo base_url();?>css/animate.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>css/style.default.css" rel="stylesheet" id="theme-stylesheet">
-    <link href="<?php echo base_url();?>css/custom.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
-    <link href="<?php echo base_url();?>css/owl.carousel.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>css/owl.theme.css" rel="stylesheet">
+    <link href="https://projectakhir.s3.amazonaws.com/css/animate.css" rel="stylesheet">
+    <link href="https://projectakhir.s3.amazonaws.com/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="https://projectakhir.s3.amazonaws.com/css/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://projectakhir.s3.amazonaws.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://projectakhir.s3.amazonaws.com/img/apple-touch-icon-152x152.png" />
+    <link href="https://projectakhir.s3.amazonaws.com/css/owl.carousel.css" rel="stylesheet">
+    <link href="https://projectakhir.s3.amazonaws.com/css/owl.theme.css" rel="stylesheet">
 
 </head>
 
