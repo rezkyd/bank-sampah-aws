@@ -88,7 +88,6 @@ class C_pengunjung extends CI_Controller {
             $data = array('data' => $data);
             $this->cache->memcached->save('cekHarga',$data, 3600);
         }
-        
         $this->load->view('v_header');
         $this->load->view('v_cekHarga', $data);
         $this->load->view('v_footer');
