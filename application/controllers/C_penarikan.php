@@ -17,11 +17,15 @@ class C_penarikan extends CI_Controller
     public function index(){    
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-            $dataPenarikan = $this->modPenarikan->GetSemuaPenarikan();
-            $data = array(
+            $this->load->driver('cache');
+            if (!$data = $this->cache->memcached->get('penarikan')){
+                $dataPenarikan = $this->modPenarikan->GetSemuaPenarikan();
+                $data = array(
                     'dataPenarikan' => $dataPenarikan,
                     'tabAdmin' => 6
-            );
+                );
+                $this->cache->memcached->save('penarikan',$data, 60);
+            }
             $this->load->view('petugas/pages/v_headerAdmin', $data);
             $this->load->view('petugas/v_lihatPenarikan', $data);
             $this->load->view('petugas/pages/v_footerAdmin');
