@@ -11,9 +11,14 @@ class C_Sampah extends CI_Controller
     public function index(){
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-            $dataSampah = $this->modSampah->GetSemuaSampah();
-            $data = array('dataSampah' => $dataSampah,
+            $this->load->driver('cache');
+            if (!$data = $this->cache->memcached->get('sampah')){
+                $dataSampah = $this->modSampah->GetSemuaSampah();
+                $data = array('dataSampah' => $dataSampah,
                             'tabAdmin' => 5);
+                $this->cache->memcached->save('sampah',$data, 60);
+            }
+            
             $this->load->view('petugas/pages/v_headerAdmin', $data);
             $this->load->view('petugas/v_lihatSampah', $data);
             $this->load->view('petugas/pages/v_footerAdmin');
