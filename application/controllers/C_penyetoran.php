@@ -11,17 +11,19 @@ class C_penyetoran extends CI_Controller
         $this->load->model('modBukuTabungan');
         $this->load->model('modNasabah');
         $this->load->model('modJemput');
-        
+        $this->load->driver('cache');
     }
     public function index(){
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if($cek >0){
-            $dataPenyetoran = $this->modPenyetoran->GetWhere(array('status' => 1));
-            $data = array(
-                'dataPenyetoran' => $dataPenyetoran,
-                'tabAdmin' => 7
-            );
-
+            if (!$data = $this->cache->memcached->get('penyetoran')){
+                $dataPenyetoran = $this->modPenyetoran->GetWhere(array('status' => 1));
+                $data = array(
+                    'dataPenyetoran' => $dataPenyetoran,
+                    'tabAdmin' => 7
+                );
+                $this->cache->memcached->save('penyetoran',$data, 60);
+            }
             $this->load->view('petugas/pages/v_headerAdmin', $data);
             $this->load->view('petugas/v_lihatPenyetoran', $data);
             $this->load->view('petugas/pages/v_footerAdmin');
@@ -338,25 +340,28 @@ class C_penyetoran extends CI_Controller
             if(isset($_GET['id'])){
                 $idJemput = $_GET['id'];
             }
-            $detail = $this->modPenyetoran->GetWhereDetail(array('noNota' => $no));
-            $dataPenyetoran = $this->modPenyetoran->GetWhere(array('noNota' => $no));
-            if($dataPenyetoran[0]['status'] == 1){
-                $status = 'Terverifikasi';
-            }else{
-                $status = 'Belum Diverifikasi';
+            if (!$data = $this->cache->memcached->get('detail')){
+                $detail = $this->modPenyetoran->GetWhereDetail(array('noNota' => $no));
+                $dataPenyetoran = $this->modPenyetoran->GetWhere(array('noNota' => $no));
+                if($dataPenyetoran[0]['status'] == 1){
+                    $status = 'Terverifikasi';
+                }else{
+                    $status = 'Belum Diverifikasi';
+                }
+                $data = array(
+                    'noNota' => $detail[0]['noNota'],
+                    'username' => $detail[0]['username'],
+                    'kredit' => $dataPenyetoran[0]['kredit'],
+                    'tanggal' => $dataPenyetoran[0]['tanggal'],
+                    'data' => $detail,
+                    'tabAdmin' => 7,
+                    'status' => $status,
+                    'akun' => 'a',
+                    'idJemput' => $idJemput
+                );
+                $this->cache->memcached->save('detail',$data, 60);
             }
-            $data = array(
-                'noNota' => $detail[0]['noNota'],
-                'username' => $detail[0]['username'],
-                'kredit' => $dataPenyetoran[0]['kredit'],
-                'tanggal' => $dataPenyetoran[0]['tanggal'],
-                'data' => $detail,
-                'tabAdmin' => 7,
-                'status' => $status,
-                'akun' => 'a',
-                'idJemput' => $idJemput
-            );
-
+            
             $this->load->view('petugas/pages/v_headerAdmin', $data);
             $this->load->view('petugas/v_detailPenyetoran', $data); 
             $this->load->view('petugas/pages/v_footerAdmin');
