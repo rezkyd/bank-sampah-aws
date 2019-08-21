@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
  
 class modBukuTabungan extends CI_Model{
-    private $database = "bukuTabungan";
+    private $database = "bukutabungan";
     private $query = "";
 
     public function InsertTransaksi($data){
