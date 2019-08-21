@@ -9,22 +9,26 @@ class C_jemput extends CI_Controller {
         $this->load->model('modNasabah');
         $this->load->model('modPetugas');
         $this->load->model('modPenyetoran');
+        $this->load->driver('cache');
     }
 
     public function semuaJadwalPenjemputan() {
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-            $jadwal = $this->modJemput->GetSemuaJemput();
-            $date = date('Y-m-d');
+            if (!$data = $this->cache->memcached->get('semuaJadwal')){
+                $jadwal = $this->modJemput->GetSemuaJemput();
+                $date = date('Y-m-d');
             
-            $tipe = $this->session->userdata('tipe');
-            $dataAdmin = array(
+                $tipe = $this->session->userdata('tipe');
+                $dataAdmin = array(
                     'jadwal' => $jadwal,
                     'tabAdmin' => 8,
                     'tipe' => $tipe);
-                $this->load->view('petugas/pages/v_headerAdmin', $dataAdmin);
-                $this->load->view('petugas/v_lihatJemput', $dataAdmin);
-                $this->load->view('petugas/pages/v_footerAdmin');
+                $this->cache->memcached->save('semuaJadwal',$data, 300);
+                }
+                    $this->load->view('petugas/pages/v_headerAdmin', $dataAdmin);
+                    $this->load->view('petugas/v_lihatJemput', $dataAdmin);
+                    $this->load->view('petugas/pages/v_footerAdmin');
         }else{
             ?>
             <script type="text/javascript">
@@ -39,22 +43,23 @@ class C_jemput extends CI_Controller {
      public function jadwalPenjemputan($status) {
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-            $stat = str_replace("%20"," ",$status);
-            $dataJadwal = $this->modJemput->GetWhere(array('status' => $stat));
-            $jadwalMenunggu = $this->modJemput->GetWhere(array('status' => 'Menunggu Penjemputan'));
-            $jadwalMenjemput = $this->modJemput->GetWhere(array('status' => 'Menjemput Pesanan'));
+            if (!$data = $this->cache->memcached->get('jadwalPenjemputan')){
+                $stat = str_replace("%20"," ",$status);
+                $dataJadwal = $this->modJemput->GetWhere(array('status' => $stat));
+                $jadwalMenunggu = $this->modJemput->GetWhere(array('status' => 'Menunggu Penjemputan'));
+                $jadwalMenjemput = $this->modJemput->GetWhere(array('status' => 'Menjemput Pesanan'));
             
-            $tipe = $this->session->userdata('tipe');
-            $date = date('Y-m-d');
+                $tipe = $this->session->userdata('tipe');
+                $date = date('Y-m-d');
                 
-            $dataAdmin = array(
+                $dataAdmin = array(
                     'jadwal' => $dataJadwal,
                     'tabAdmin' => 8,
                     'tipe' => $tipe,
                     'stat' => $stat
                 );
 
-            $dataDriver = array(
+                $dataDriver = array(
                     'jadwalMenunggu' => $jadwalMenunggu,
                     'jadwalMenjemput' => $jadwalMenjemput,
                     'tabDriver' =>3,
@@ -63,6 +68,8 @@ class C_jemput extends CI_Controller {
                     'stat' => $stat,
                     'jadwal' => ''
                     );
+                $this->cache->memcached->save('jadwalPenjemputan',$data, 300);
+            }
 
             if($tipe == 'Admin'){
                 $this->load->view('petugas/pages/v_headerAdmin', $dataAdmin);
@@ -88,17 +95,18 @@ class C_jemput extends CI_Controller {
     public function jadwalHarian() {
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-            $date = date('Y-m-d');
-            $tipe = $this->session->userdata('tipe');
-            $pesan ='';
-            $jadwalHari = $this->modJemput->GetWhere(array('tanggalJemput' => $date, 'status' => 'Menunggu Penjemputan'));
-            $jadwalHari2 = $this->modJemput->GetWhere(array('tanggalJemput' => $date, 'status' => 'Menjemput Pesanan'));
-            if($jadwalHari < 0){
-                $pesan = 't';
-            }else{
-                $pesan = 'y';
-            }    
-            $dataDriver = array(
+            if (!$data = $this->cache->memcached->get('jadwalHarian')){
+                $date = date('Y-m-d');
+                $tipe = $this->session->userdata('tipe');
+                $pesan ='';
+                $jadwalHari = $this->modJemput->GetWhere(array('tanggalJemput' => $date, 'status' => 'Menunggu Penjemputan'));
+                $jadwalHari2 = $this->modJemput->GetWhere(array('tanggalJemput' => $date, 'status' => 'Menjemput Pesanan'));
+                if($jadwalHari < 0){
+                    $pesan = 't';
+                }else{
+                    $pesan = 'y';
+                }    
+                $dataDriver = array(
                     'jadwalMenunggu' => $jadwalHari,
                     'jadwalMenjemput' => $jadwalHari2,
                     'tabDriver' =>2,
@@ -107,7 +115,9 @@ class C_jemput extends CI_Controller {
                     'pesan' => $pesan,
                     'jadwal' => 'Harian'
                     );
-
+                $this->cache->memcached->save('jadwalHarian',$data, 300);
+            }
+            
             $this->load->view('petugas/pages/v_headerDriver',$dataDriver);
             $this->load->view('petugas/v_jadwalPenjemputanDriver', $dataDriver);
             $this->load->view('petugas/pages/v_footerAdmin'); 
@@ -125,46 +135,49 @@ class C_jemput extends CI_Controller {
     public function detailPenjemputan($no){
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-            $akun = $this->modJemput->GetWhere(array('idJemput' => $no));
-            $tipe = $this->session->userdata('tipe');
+            if (!$data = $this->cache->memcached->get('detailJemput')){
+                $akun = $this->modJemput->GetWhere(array('idJemput' => $no));
+                $tipe = $this->session->userdata('tipe');
 
-            $nextStat = '';
-            if($akun[0]['status'] == 'Menunggu Konfirmasi'){
-                $nextStat = 'Menunggu Penjemputan';
-                $tombol = 'Terima Pesanan';
-            }else if($akun[0]['status'] == 'Menunggu Penjemputan'){
-                $nextStat = 'Menjemput Pesanan';
-                $tombol = 'Jemput Pesanan';
-            }else if($akun[0]['status'] == 'Menjemput Pesanan'){
-                $tombol = 'Rekap Pesanan';
-            }else if($akun[0]['status'] == 'Menunggu Verifikasi'){
-                $nextStat = 'Selesai';
-                $tombol = 'Verifikasi Pesanan';
-            }else if($akun[0]['status'] == 'Selesai' || $akun[0]['status'] == 'Penjemputan Ditolak'){
-               $tombol = 'Selesai';
-            }   
+                $nextStat = '';
+                if($akun[0]['status'] == 'Menunggu Konfirmasi'){
+                    $nextStat = 'Menunggu Penjemputan';
+                    $tombol = 'Terima Pesanan';
+                }else if($akun[0]['status'] == 'Menunggu Penjemputan'){
+                    $nextStat = 'Menjemput Pesanan';
+                    $tombol = 'Jemput Pesanan';
+                }else if($akun[0]['status'] == 'Menjemput Pesanan'){
+                    $tombol = 'Rekap Pesanan';
+                }else if($akun[0]['status'] == 'Menunggu Verifikasi'){
+                    $nextStat = 'Selesai';
+                    $tombol = 'Verifikasi Pesanan';
+                }else if($akun[0]['status'] == 'Selesai' || $akun[0]['status'] == 'Penjemputan Ditolak'){
+                    $tombol = 'Selesai';
+                }   
 
-            $data = array(  
-                'idJemput' => $akun[0]['idJemput'],
-                'username' => $akun[0]['username'],
-                'HP' => $akun[0]['HP'],
-                'alamat' => $akun[0]['alamat'],
-                'tanggal'  => $akun[0]['tanggalJemput'],
-                'latitude' => $akun[0]['latitude'],
-                'longitude' => $akun[0]['longitude'],
-                'waktu' => $akun[0]['waktu'],
-                'kloter' => $akun[0]['kloter'],
-                'status' => $akun[0]['status'],
-                'nextStat' => $nextStat ,   
-                'tabDriver' => 2,
-                'tabAdmin' =>8,
-                'tipe' => $tipe,
-                'tombol' => $tombol,
-                'driver' => $akun[0]['driver'],
-                'nohpDriver' => $akun[0]['nohpDriver'],
-                'noNota' => $akun[0]['noNota']
-                );
-
+                $data = array(  
+                    'idJemput' => $akun[0]['idJemput'],
+                    'username' => $akun[0]['username'],
+                    'HP' => $akun[0]['HP'],
+                    'alamat' => $akun[0]['alamat'],
+                    'tanggal'  => $akun[0]['tanggalJemput'],
+                    'latitude' => $akun[0]['latitude'],
+                    'longitude' => $akun[0]['longitude'],
+                    'waktu' => $akun[0]['waktu'],
+                    'kloter' => $akun[0]['kloter'],
+                    'status' => $akun[0]['status'],
+                    'nextStat' => $nextStat ,   
+                    'tabDriver' => 2,
+                    'tabAdmin' =>8,
+                    'tipe' => $tipe,
+                    'tombol' => $tombol,
+                    'driver' => $akun[0]['driver'],
+                    'nohpDriver' => $akun[0]['nohpDriver'],
+                    'noNota' => $akun[0]['noNota']
+                    );
+                $this->cache->memcached->save('detailJemput',$data, 60);
+            }
+            
             if($tipe == 'Admin'){
                 $this->load->view('petugas/pages/v_headerAdmin', $data);
                 $this->load->view('petugas/v_detailPenjemputan', $data);
