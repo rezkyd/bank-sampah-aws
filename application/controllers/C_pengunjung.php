@@ -28,7 +28,9 @@ class C_pengunjung extends CI_Controller {
 			} else{
 				echo "saving failed";
 			}
-        }
+        } else{
+			echo "success getting cache";
+		}
                    
         $this->load->view('v_header');
         $this->load->view('v_beranda', $data);
