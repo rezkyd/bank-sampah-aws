@@ -10,6 +10,7 @@ class C_nasabah extends CI_Controller {
         $this->load->model('modSampah');
         $this->load->model('modJemput');
         $this->load->model('modPenyetoran');
+        $this->load->driver('cache');
     }
     
     public function profilNasabah(){
@@ -18,7 +19,8 @@ class C_nasabah extends CI_Controller {
             $akun = $this->modNasabah->GetWhere(array('username' => $this->session->userdata('username')));
             $dataPesanan = $this->modJemput->GetWhere(array('username' => $this->session->userdata('username')));            
            
-            $data = array(
+            if (!$data = $this->cache->memcached->get('profil')){
+                $data = array(
                     'nama' => $akun[0]['nama'],
                     'username' => $akun[0]['username'],
                     'alamat' => $akun[0]['alamat'],
@@ -28,6 +30,8 @@ class C_nasabah extends CI_Controller {
                     'tabNasabah' => 1,
                     'dataPesanan' => $dataPesanan
                 );
+                $this->cache->memcached->save('profil',$data, 60);
+            }
             $this->load->view('nasabah/v_headerNasabah', $data);
             $this->load->view('nasabah/v_profilNasabah', $data);
             $this->load->view('nasabah/v_footerNasabah');
