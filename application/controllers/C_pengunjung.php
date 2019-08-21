@@ -5,38 +5,26 @@ class C_pengunjung extends CI_Controller {
         $this->load->model('modNasabah');
         $this->load->model('modPetugas');
         $this->load->model('modSampah');
+        $this->load->driver('cache'); 
     }
 
     public function index(){
-        $NasabahKelompok = $this->modNasabah->countNasabah('Nasabah Kelompok');
-        $NasabahIndividu = $this->modNasabah->countNasabah('Nasabah Individu');
-        $NasabahSekolah = $this->modNasabah->countNasabah('Nasabah Sekolah');
-        $NasabahInstansi = $this->modNasabah->countNasabah('Nasabah Instansi');
-        $data = array('NasabahKelompok' => $NasabahKelompok,
-                      'NasabahIndividu' => $NasabahIndividu,
-                      'NasabahSekolah' => $NasabahSekolah,
-                      'NasabahInstansi' => $NasabahInstansi
-                    );
-				
-        $this->load->driver('cache');   
-        if (!$cachedata = $this->cache->memcached->get('header')){
-			//echo var_dump($this->cache->memcached->cache_info());
-            //$cachedata = $this->load->view('v_header');
-			$cachedata = "testing";
-			if($success = $this->cache->memcached->save('header',$cachedata, 3600)){
-				echo "saving success";
-			} else{
-				echo "saving failed";
-			}
-        } else{
-			echo "success getting cache";
+		if (!$data = $this->cache->memcached->get('countNasabah')){
+			$NasabahKelompok = $this->modNasabah->countNasabah('Nasabah Kelompok');
+			$NasabahIndividu = $this->modNasabah->countNasabah('Nasabah Individu');
+			$NasabahSekolah = $this->modNasabah->countNasabah('Nasabah Sekolah');
+			$NasabahInstansi = $this->modNasabah->countNasabah('Nasabah Instansi');
+			$data = array('NasabahKelompok' => $NasabahKelompok,
+						  'NasabahIndividu' => $NasabahIndividu,
+						  'NasabahSekolah' => $NasabahSekolah,
+						  'NasabahInstansi' => $NasabahInstansi
+						);
+			$this->cache->memcached->save('countNasabah',$data, 3600);
 		}
                    
         $this->load->view('v_header');
         $this->load->view('v_beranda', $data);
-        $this->load->view('v_footer');
-
-        
+        $this->load->view('v_footer');    
     }
 
     public function login() {
