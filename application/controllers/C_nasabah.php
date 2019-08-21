@@ -15,11 +15,11 @@ class C_nasabah extends CI_Controller {
     
     public function profilNasabah(){
         $cek = $this->modNasabah->cekData($this->session->userdata('username'),$this->session->userdata('password'));
-        if ($cek > 0) {
-            $akun = $this->modNasabah->GetWhere(array('username' => $this->session->userdata('username')));
-            $dataPesanan = $this->modJemput->GetWhere(array('username' => $this->session->userdata('username')));            
-           
+ 
+        if ($cek > 0) {          
             if (!$data = $this->cache->memcached->get('profil')){
+                $akun = $this->modNasabah->GetWhere(array('username' => $this->session->userdata('username')));
+                $dataPesanan = $this->modJemput->GetWhere(array('username' => $this->session->userdata('username')));
                 $data = array(
                     'nama' => $akun[0]['nama'],
                     'username' => $akun[0]['username'],
@@ -48,14 +48,17 @@ class C_nasabah extends CI_Controller {
     public function bukuTabungan() {
         $cek = $this->modNasabah->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-            $user = $this->modNasabah->GetWhere(array('username' => $this->session->userdata('username')));            
-            $dataBuku = $this->modBukuTabungan->GetWhere(array('username' => $this->session->userdata('username')));
-            $data = array('dataBuku' => $dataBuku,
+            if (!$data = $this->cache->memcached->get('tabungan')){
+                $user = $this->modNasabah->GetWhere(array('username' => $this->session->userdata('username')));            
+                $dataBuku = $this->modBukuTabungan->GetWhere(array('username' => $this->session->userdata('username')));
+                $data = array('dataBuku' => $dataBuku,
                         'username' => $user[0]['username'],
                         'nama' => $user[0]['nama'],
                         'saldoAkhir' => $user[0]['saldo'],
                         'tabNasabah' => 2
                     );
+                $this->cache->memcached->save('tabungan',$data, 60);
+            }
             
             $this->load->view('nasabah/v_headerNasabah', $data);
             $this->load->view('nasabah/v_bukuTabungan', $data);
@@ -92,12 +95,15 @@ class C_nasabah extends CI_Controller {
             }else{
                 $newOrder = 'y';
             }
-
-            $data = array('tabNasabah' => 3, 
+            
+            if (!$data = $this->cache->memcached->get('dataJemput')){
+                $data = array('tabNasabah' => 3, 
                             'dataPesanan' => $dataPesanan,
                             'newOrder' => $newOrder,
                             'latestOrder' => $latestOrder
                              );
+                $this->cache->memcached->save('dataJemput',$data, 60);
+            }
             $this->load->view('nasabah/v_headerNasabah', $data);
             $this->load->view('nasabah/v_jemputSampah', $data);
             $this->load->view('nasabah/v_footerNasabah');
@@ -183,18 +189,20 @@ class C_nasabah extends CI_Controller {
     public function lacakPesanan($idJemput){
         $cek = $this->modNasabah->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if($cek >0){
-            $detail = $this->modJemput->lacakPesanan(array('username' => $this->session->userdata('username'), 'idJemput' =>$idJemput));
-            $pesanan = $this->modJemput->GetWhere(array('username' => $this->session->userdata('username'), 'idJemput' =>$idJemput));
-
-            $data = array(
-                'dataDetail' => $detail,
-                'username' => $pesanan[0]['username'],
-                'idJemput' => $idJemput,
-                'tanggalJemput' => $pesanan[0]['tanggalJemput'],
-                'tabNasabah' => 3,
-                'driver' => $pesanan[0]['driver'],
-                'noHPDriver' => $pesanan[0]['nohpDriver'],
-            );
+            if (!$data = $this->cache->memcached->get('lacak')){
+                $detail = $this->modJemput->lacakPesanan(array('username' => $this->session->userdata('username'), 'idJemput' =>$idJemput));
+                $pesanan = $this->modJemput->GetWhere(array('username' => $this->session->userdata('username'), 'idJemput' =>$idJemput));
+                $data = array(
+                    'dataDetail' => $detail,
+                    'username' => $pesanan[0]['username'],
+                    'idJemput' => $idJemput,
+                    'tanggalJemput' => $pesanan[0]['tanggalJemput'],
+                    'tabNasabah' => 3,
+                    'driver' => $pesanan[0]['driver'],
+                    'noHPDriver' => $pesanan[0]['nohpDriver'],
+                );
+                $this->cache->memcached->save('lacak',$data, 60);
+            }
 
             $this->load->view('nasabah/v_headerNasabah', $data);
             $this->load->view('nasabah/v_lacakPesanan', $data); 
@@ -235,12 +243,14 @@ class C_nasabah extends CI_Controller {
     public function lihatPenyetoran(){
         $cek = $this->modNasabah->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if($cek >0){
-            $dataPenyetoran = $this->modPenyetoran->GetWhere(array('username' => $this->session->userdata('username')));
-            $data = array(
+            if (!$data = $this->cache->memcached->get('penyetoran')){
+                $dataPenyetoran = $this->modPenyetoran->GetWhere(array('username' => $this->session->userdata('username')));
+                $data = array(
                 'dataPenyetoran' => $dataPenyetoran,
                 'tabNasabah' => 4
             );
-
+                $this->cache->memcached->save('penyetoran',$data, 60);
+            }
             $this->load->view('nasabah/v_headerNasabah', $data);
             $this->load->view('nasabah/v_cekPenyetoran', $data);
             $this->load->view('nasabah/v_footerNasabah');
