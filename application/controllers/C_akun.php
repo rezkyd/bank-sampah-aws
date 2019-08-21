@@ -402,9 +402,9 @@ class C_akun extends CI_Controller
      function berandaPetugas(){
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
+			$tipe = $this->session->userdata('tipe');
 			if (!$data = $this->cache->memcached->get('beranda')){
 				$akun = $this->modPetugas->GetWhere(array('username' => $this->session->userdata('username')));
-            	$tipe = $this->session->userdata('tipe');
             
             	$confirmPending = $this->modJemput->GetWhere(array('status' => 'Menunggu Konfirmasi'));
             	$pickupPending = $this->modJemput->GetWhere(array('status' => 'Menunggu Penjemputan'));
