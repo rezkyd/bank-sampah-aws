@@ -7,17 +7,21 @@ class C_akun extends CI_Controller
         parent::__construct();
         $this->load->model('modNasabah');
         $this->load->model('modPetugas'); 
-        $this->load->model('modJemput');
+		$this->load->model('modJemput');
+		$this->load->driver('cache');
     }
 
     public function index(){
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-			$dataNasabah = $this->modNasabah->GetSemuaNasabah();
-	         $data = array(
+			if (!$data = $this->cache->memcached->get('dataAkunNasabah')){
+				$dataNasabah = $this->modNasabah->GetSemuaNasabah();
+	         	$data = array(
         		'tabAdmin' => 3,
         		'dataNasabah' => $dataNasabah,
-        	);
+        		);
+				$this->cache->memcached->save('dataAkunNasabah',$data, 60);
+			}
 			
 			$this->load->view('petugas/pages/v_headerAdmin', $data);
 	        $this->load->view('petugas/v_lihatAkunNasabah', $data);
@@ -30,11 +34,14 @@ class C_akun extends CI_Controller
     public function lihatPetugas(){
     	$cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-	        $dataPetugas = $this->modPetugas->GetSemuaPetugas();
-	        $data = array(
+			if (!$data = $this->cache->memcached->get('dataAkunPetugas')){
+				$dataPetugas = $this->modPetugas->GetSemuaPetugas();
+	        	$data = array(
         		'tabAdmin' => 4,
         		'dataPetugas' => $dataPetugas
-        	);
+        		);
+				$this->cache->memcached->save('dataAkunPetugas',$data, 60);
+			}
 			
 			$this->load->view('petugas/pages/v_headerAdmin', $data);
 	        $this->load->view('petugas/v_lihatAkunPetugas', $data);
@@ -395,21 +402,22 @@ class C_akun extends CI_Controller
      function berandaPetugas(){
         $cek = $this->modPetugas->cekData($this->session->userdata('username'),$this->session->userdata('password'));
         if ($cek > 0) {
-            $akun = $this->modPetugas->GetWhere(array('username' => $this->session->userdata('username')));
-            $tipe = $this->session->userdata('tipe');
+			if (!$data = $this->cache->memcached->get('beranda')){
+				$akun = $this->modPetugas->GetWhere(array('username' => $this->session->userdata('username')));
+            	$tipe = $this->session->userdata('tipe');
             
-            $confirmPending = $this->modJemput->GetWhere(array('status' => 'Menunggu Konfirmasi'));
-            $pickupPending = $this->modJemput->GetWhere(array('status' => 'Menunggu Penjemputan'));
-            $verifPending = $this->modJemput->GetWhere(array('status' => 'Menunggu Verifikasi'));
-            $pickupOrder = $this->modJemput->GetWhere(array('status' => 'Menjemput Pesanan'));
+            	$confirmPending = $this->modJemput->GetWhere(array('status' => 'Menunggu Konfirmasi'));
+            	$pickupPending = $this->modJemput->GetWhere(array('status' => 'Menunggu Penjemputan'));
+            	$verifPending = $this->modJemput->GetWhere(array('status' => 'Menunggu Verifikasi'));
+            	$pickupOrder = $this->modJemput->GetWhere(array('status' => 'Menjemput Pesanan'));
             
 
-            $countConfirmPending = $this->modJemput->countData(array('status' => 'Menunggu Konfirmasi'));
-            $countPickupPending = $this->modJemput->countData(array('status' => 'Menunggu Penjemputan'));
-            $countPickupOrder = $this->modJemput->countData(array('status' => 'Menjemput Pesanan'));
-            $countVerifPending = $this->modJemput->countData(array('status' => 'Menunggu Verifikasi'));
+            	$countConfirmPending = $this->modJemput->countData(array('status' => 'Menunggu Konfirmasi'));
+            	$countPickupPending = $this->modJemput->countData(array('status' => 'Menunggu Penjemputan'));
+            	$countPickupOrder = $this->modJemput->countData(array('status' => 'Menjemput Pesanan'));
+            	$countVerifPending = $this->modJemput->countData(array('status' => 'Menunggu Verifikasi'));
             
-            $data = array(
+            	$data = array(
                     'nama' => $akun[0]['nama'],
                     'username' => $akun[0]['username'],
                     'tabAdmin' => 1,
@@ -423,6 +431,10 @@ class C_akun extends CI_Controller
                     'countConfirmPending' => $countConfirmPending,
                     'countVerifPending'=> $countVerifPending
                 );
+
+				$this->cache->memcached->save('beranda',$data, 60);
+			}
+            
             
             if($tipe == 'Admin'){
                 $this->load->view('petugas/pages/v_headerAdmin',$data);
