@@ -23,7 +23,7 @@ class C_pengunjung extends CI_Controller {
 		}
         
 		if(!$sess = $this->cache->memcached->get('username')){
-			echo "no session username found");
+			echo "no session username found";
 		} else{
 			echo "session username found - ".$sess;
 		}
