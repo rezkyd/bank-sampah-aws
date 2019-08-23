@@ -21,7 +21,12 @@ class C_pengunjung extends CI_Controller {
 						);
 			$this->cache->memcached->save('countNasabah',$data, 3600);
 		}
-                   
+        
+		if(!sess = $this->cache->memcached->get('username')){
+			echo "no session username found");
+		} else{
+			echo "session username found";
+		}
         $this->load->view('v_header');
         $this->load->view('v_beranda', $data);
         $this->load->view('v_footer');    
@@ -39,7 +44,7 @@ class C_pengunjung extends CI_Controller {
                 $data_session = array(
                     'username' => $username,
                     'password' => $password,
-                    'tipe' => 'nasabah'
+                    'tipe' => 'nasab	h'
                 );
                 $this->session->set_userdata($data_session);
                 ?>
