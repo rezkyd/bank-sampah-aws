@@ -22,10 +22,10 @@ class C_pengunjung extends CI_Controller {
 			$this->cache->memcached->save('countNasabah',$data, 3600);
 		}
         
-		if(!sess = $this->cache->memcached->get('username')){
+		if(!$sess = $this->cache->memcached->get('username')){
 			echo "no session username found");
 		} else{
-			echo "session username found";
+			echo "session username found - ".$sess;
 		}
         $this->load->view('v_header');
         $this->load->view('v_beranda', $data);
