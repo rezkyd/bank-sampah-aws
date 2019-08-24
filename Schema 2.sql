@@ -19,9 +19,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `banksampahmlg`
+-- Database: `bsmdb`
 --
 
+CREATE DATABASE IF NOT EXISTS bsmdb;
+CREATE USER IF NOT EXISTS 'bsmuser'@'localhost'; 
+GRANT ALL PRIVILEGES ON bsmdb.* to 'bsmuser'@'localhost' IDENTIFIED BY 'bsmpassword'; 
+CREATE USER IF NOT EXISTS 'bsmuser'@'%'; 
+GRANT ALL PRIVILEGES ON bsmdb.* to 'bsmuser'@'%' IDENTIFIED BY 'bsmpassword'; 
+FLUSH PRIVILEGES;
+
+USE bsmdb;
 -- --------------------------------------------------------
 
 --
