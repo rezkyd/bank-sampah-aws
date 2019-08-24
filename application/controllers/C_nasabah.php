@@ -15,11 +15,7 @@ class C_nasabah extends CI_Controller {
     
     public function profilNasabah(){
         $cek = $this->modNasabah->cekData($this->session->userdata('username'),$this->session->userdata('password'));
-		if(!$sess = $this->cache->memcached->get('username')){
-			echo "no session username found";
-		} else{
-			echo "session username found - ".$sess;
-		}
+		
         if ($cek > 0) {          
             if (!$data = $this->cache->memcached->get('profil')){
                 $akun = $this->modNasabah->GetWhere(array('username' => $this->session->userdata('username')));
@@ -35,9 +31,7 @@ class C_nasabah extends CI_Controller {
                     'dataPesanan' => $dataPesanan
                 );
                 $this->cache->memcached->save('profil',$data, 60);
-            } else{
-				echo "data nasabah memcached found - ".$data;
-			}	
+            }	
             $this->load->view('nasabah/v_headerNasabah', $data);
             $this->load->view('nasabah/v_profilNasabah', $data);
             $this->load->view('nasabah/v_footerNasabah');
