@@ -35,7 +35,9 @@ class C_nasabah extends CI_Controller {
                     'dataPesanan' => $dataPesanan
                 );
                 $this->cache->memcached->save('profil',$data, 60);
-            }
+            } else{
+				echo "data nasabah memcached found - ".$data;
+			}	
             $this->load->view('nasabah/v_headerNasabah', $data);
             $this->load->view('nasabah/v_profilNasabah', $data);
             $this->load->view('nasabah/v_footerNasabah');
