@@ -39,7 +39,7 @@ class C_pengunjung extends CI_Controller {
                 $data_session = array(
                     'username' => $username,
                     'password' => $password,
-                    'tipe' => 'nasab	h'
+                    'tipe' => 'nasabah'
                 );
                 $this->session->set_userdata($data_session);
                 ?>
