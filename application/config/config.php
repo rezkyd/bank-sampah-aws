@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://bsm-web-loadbalancer-632989805.us-east-1.elb.amazonaws.com/';
+$config['base_url'] = 'https://banksampah.ddns.net/';
 
 /*
 |--------------------------------------------------------------------------
