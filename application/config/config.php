@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://www.dua.ccb';
+$config['base_url'] = 'https://ns-170.awsdns-21.com';
 
 /*
 |--------------------------------------------------------------------------
