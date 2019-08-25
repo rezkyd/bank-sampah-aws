@@ -9,7 +9,7 @@
           <div class="row">
             <div class="col-lg-11 card">
               <div class="card-body">
-                <form class="form-horizontal" method="post" action="<?php echo site_url('c_akun/updatePassword');?>">
+                <form class="form-horizontal" method="post" action="<?php echo site_url('akun/updatePassword');?>">
                     <div class="form-group row">
                         <label class="col-sm-2 form-control-label">Password Lama</label>
                         <div class="col-sm-4">
@@ -32,7 +32,7 @@
                     
                     <div class="form-group row">
                       <div class="col-sm-4 offset-sm-2">
-                        <a type="submit" class="btn btn-secondary" href="<?php if($tipe == 'nasabah'){ echo site_url('c_akun/profilNasabah'); }else{ echo site_url('c_akun/berandaPetugas');}  ?>">Batal</a>
+                        <a type="submit" class="btn btn-secondary" href="<?php if($tipe == 'nasabah'){ echo site_url('akun/profilNasabah'); }else{ echo site_url('akun/berandaPetugas');}  ?>">Batal</a>
                         <button type="submit" class="btn btn-primary" id="simpan">Simpan Perubahan</button>
                       </div>
                     </div>

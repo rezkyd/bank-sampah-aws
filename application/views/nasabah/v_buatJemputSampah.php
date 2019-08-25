@@ -1,7 +1,7 @@
        <div class="breadcrumb-holder">   
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
             <li class="breadcrumb-item active">Jemput Sampah</li>
           </ul>
         </div>
@@ -17,7 +17,7 @@
           <div class="row">
             <div class="col-lg-11 card">
                 <div class="card-body">
-                  <form class="form-horizontal" method="post" action="<?php echo site_url('c_nasabah/insertJemput');?>">
+                  <form class="form-horizontal" method="post" action="<?php echo site_url('nasabah/insertJemput');?>">
                     <div class="form-group row">
                         <label class="col-sm-2 form-control-label">ID Penjemputan</label>
                         <div class="col-sm-3">
@@ -81,7 +81,7 @@
               
                     <div class="form-group row">
                       <div class="col-sm-4 offset-sm-2">
-                        <a  class="btn btn-secondary" href="<?php echo site_url('c_nasabah/profilNasabah'); ?>">Batal</a>
+                        <a  class="btn btn-secondary" href="<?php echo site_url('nasabah/profilNasabah'); ?>">Batal</a>
                         <button type="submit" class="btn btn-primary">Buat Pesanan</button>
                       </div>
                     </div>

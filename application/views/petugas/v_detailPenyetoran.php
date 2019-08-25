@@ -4,8 +4,8 @@
       <div class="breadcrumb-holder">   
         <div class="container-fluid"><?php if(isset($akun) != 'n'){?>
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
-             <li class="breadcrumb-item active"><a href="<?php echo site_url('c_penyetoran');?>">Penyetoran Sampah</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
+             <li class="breadcrumb-item active"><a href="<?php echo site_url('penyetoran');?>">Penyetoran Sampah</a></li>
             <li class="breadcrumb-item active">Detail Penyetoran Sampah</li>
           </ul><?php }?>
         </div>
@@ -91,7 +91,7 @@
             </div>
             <div class="modal-body"><center>
 
-                <form method="post" action="<?php echo site_url('c_penyetoran/verifPenyetoran'); ?>">
+                <form method="post" action="<?php echo site_url('penyetoran/verifPenyetoran'); ?>">
                     <div class="form-group">
                         <p> Validasi Transaksi Penyetoran Sampah?</p>
                         <input type="hidden" name="nextStat" id="nextStat" value="Selesai">
@@ -102,7 +102,7 @@
                         <input type="hidden" name="kredit" value="<?= $kredit?>">
                     </div>
                     <p class="text-center">
-                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_jemput/cekLokasi/'.$idJemput); ?>">Tidak</a>
+                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('jemput/cekLokasi/'.$idJemput); ?>">Tidak</a>
                       <button class="btn btn-primary" type="submit" name="status">Ya</button> <br><br>
                     </p>
                 </form>

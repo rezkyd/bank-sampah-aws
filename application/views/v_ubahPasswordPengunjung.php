@@ -8,10 +8,10 @@
                                     <a href="<?php echo site_url('');?>">Beranda </a>
                                 </li>
                                 <li >
-                                      <a href="<?php echo site_url('c_pengunjung/profilBSM');?>">profil</a>
+                                      <a href="<?php echo site_url('pengunjung/profilBSM');?>">profil</a>
                                   </li>
                                 <li >
-                                    <a href="<?php echo site_url('c_pengunjung/cekHarga');?>">Harga Sampah BSM</a>
+                                    <a href="<?php echo site_url('pengunjung/cekHarga');?>">Harga Sampah BSM</a>
                                 </li>
                                 <li>
                                     <a href="style="margin-bottom: 0px"">Info Nasabah</a>
@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-9 clearfix">
                         <section>
-                            <form action="<?php echo site_url('c_akun/lupaPassword');?>" method="post">
+                            <form action="<?php echo site_url('akun/lupaPassword');?>" method="post">
                                 <div class="row">
                                     <div class="col-sm-5"> </div>
                                     <div class="col-sm-6">

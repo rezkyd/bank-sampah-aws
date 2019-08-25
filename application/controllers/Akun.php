@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_akun extends CI_Controller
+class Akun extends CI_Controller
 {   
 	function __construct() {
         parent::__construct();
@@ -93,11 +93,11 @@ class C_akun extends CI_Controller
 					?>
 				    	<script type="text/javascript">
 				    		alert("Data Berhasil Disimpan!");
-				    		window.location = "<?php echo site_url("c_akun/lihatPetugas") ?>"
+				    		window.location = "<?php echo site_url("akun/lihatPetugas") ?>"
 				    	</script>
 			    	<?php
 		       	}else{
-					redirect(site_url('c_akun/tambahAkun'),'refresh');
+					redirect(site_url('akun/tambahAkun'),'refresh');
 				}
 			}else{
 	        	$dataNasabah = array(
@@ -115,11 +115,11 @@ class C_akun extends CI_Controller
 					?>
 			    	<script type="text/javascript">
 			    		alert("Data Berhasil Disimpan!");
-			    		window.location = "<?php echo site_url("c_akun") ?>"
+			    		window.location = "<?php echo site_url("akun") ?>"
 			    	</script>
 			    	<?php
 		       	}else{
-					redirect(site_url('c_akun/tambahAkun'),'refresh');
+					redirect(site_url('akun/tambahAkun'),'refresh');
 				}
 			}
 		}else{
@@ -141,7 +141,7 @@ class C_akun extends CI_Controller
 		    ?>
 	    	<script type="text/javascript">
 	    		alert("Data Berhasil Dihapus!");
-	    		window.location = "<?php echo site_url("c_akun") ?>"
+	    		window.location = "<?php echo site_url("akun") ?>"
 	    	</script>
 	    	<?php
 		}else{
@@ -162,7 +162,7 @@ class C_akun extends CI_Controller
 		    ?>
 	    	<script type="text/javascript">
 	    		alert("Data Berhasil Dihapus!");
-	    		window.location = "<?php echo site_url("c_akun/lihatPetugas") ?>"
+	    		window.location = "<?php echo site_url("akun/lihatPetugas") ?>"
 	    	</script>
 	    	<?php
 		}else{
@@ -253,10 +253,10 @@ class C_akun extends CI_Controller
 
 		    if($akun == 'n'){
 		    	$res = $this->modNasabah->UpdateAkun($data, $where);
-		    	$link = "c_akun";
+		    	$link = "akun";
 		    }else if($akun == 'p'){
 			    $res = $this->modPetugas->UpdateAkun($data, $where);
-			    $link = "c_akun/lihatPetugas";
+			    $link = "akun/lihatPetugas";
 		    }
 
 		    if ($res>0) { 
@@ -324,9 +324,9 @@ class C_akun extends CI_Controller
 	    	<script type="text/javascript">
 	    		alert("Password Berhasil Diubah!");
 	    		<?php if($tipe == 'nasabah'){?>
-		    		window.location = "<?php echo site_url("c_nasabah/profilNasabah") ?>";
+		    		window.location = "<?php echo site_url("nasabah/profilNasabah") ?>";
 		        <?php }else{ ?>
-	    			window.location = "<?php echo site_url("c_akun/berandaPetugas") ?>";
+	    			window.location = "<?php echo site_url("akun/berandaPetugas") ?>";
 		        <?php }?>
 		    </script>
 	    	<?php
@@ -335,9 +335,9 @@ class C_akun extends CI_Controller
 	    	<script type="text/javascript">
 	    		alert("Password Gagal Diubah!");
 	    		if($tipe == 'nasabah'){
-		    		window.location = "<?php echo site_url("c_nasabah/profilNasabah") ?>";
+		    		window.location = "<?php echo site_url("nasabah/profilNasabah") ?>";
 		        }else{
-	    			window.location = "<?php echo site_url("c_akun/berandaPetugas") ?>";
+	    			window.location = "<?php echo site_url("akun/berandaPetugas") ?>";
 		        }
 	    	</script>
 	    	<?php
@@ -372,14 +372,14 @@ class C_akun extends CI_Controller
 	    	?>
 		    	<script type="text/javascript">
 		    		alert("Pesan Terikirm!");
-		    		window.location = "<?php echo site_url("c_pengunjung/ubahPassword") ?>"
+		    		window.location = "<?php echo site_url("pengunjung/ubahPassword") ?>"
 		    	</script>
 		    	<?php
 	    }else{
             ?>
 	    	<script type="text/javascript">
 	    		alert("Username tidak ditemukan!");
-	    		window.location = "<?php echo site_url("c_pengunjung/ubahPassword") ?>"
+	    		window.location = "<?php echo site_url("pengunjung/ubahPassword") ?>"
 	    	</script>
 	    	<?php
 	    }

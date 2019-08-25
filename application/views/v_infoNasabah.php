@@ -8,13 +8,13 @@
                                     <a href="<?php echo site_url('');?>">Beranda </a>
                                 </li>
                                 <li >
-                                      <a href="<?php echo site_url('c_pengunjung/profilBSM');?>">profil</a>
+                                      <a href="<?php echo site_url('pengunjung/profilBSM');?>">profil</a>
                                   </li>
                                 <li >
-                                    <a href="<?php echo site_url('c_pengunjung/cekHarga');?>">Harga Sampah BSM</a>
+                                    <a href="<?php echo site_url('pengunjung/cekHarga');?>">Harga Sampah BSM</a>
                                 </li>
                                 <li class="active">
-                                    <a href="<?php echo site_url('c_pengunjung/infonasabah');?>">Info Nasabah</a>
+                                    <a href="<?php echo site_url('pengunjung/infonasabah');?>">Info Nasabah</a>
                                 </li>
                             </ul>
                         </div>

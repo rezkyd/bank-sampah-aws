@@ -1,7 +1,7 @@
       <div class="breadcrumb-holder">   
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
             <li class="breadcrumb-item">Jadwal Penjemputan</li>
             <li class="breadcrumb-item active"> <?php if (isset($stat)){ echo $stat ;}else echo "Semua Jadwal";?></li>
           </ul>
@@ -43,7 +43,7 @@
                         <td><?php echo $data['HP']; ?></td>
                         <td><?php echo $data['alamat']; ?></td>
                         <td><?php echo $data['status']; ?></td>
-                        <td><a id="lokasi" class="btn btn-sm btn-primary" href="<?php echo base_url()."index.php/c_jemput/detailPenjemputan/".$data['idJemput']; ?>"> Detail</td>
+                        <td><a id="lokasi" class="btn btn-sm btn-primary" href="<?php echo base_url()."index.php/jemput/detailPenjemputan/".$data['idJemput']; ?>"> Detail</td>
                         <?php $no++;} ?>
                       </tbody>
                   </table>    

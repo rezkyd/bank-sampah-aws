@@ -1,8 +1,8 @@
       <div class="breadcrumb-holder">
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
-            <li class="breadcrumb-item"><a href="<?php echo site_url("c_akun"); ?>">Data Akun</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url("akun"); ?>">Data Akun</a></li>
             <li class="breadcrumb-item active">Buat Akun</li>
           </ul>
         </div>
@@ -17,7 +17,7 @@
             <div class="col-lg-9">
               <div class="card">
                 <div class="card-body">
-                  <form class="form-horizontal" method="post" action="<?php if($page_title == 'Buat Akun') echo site_url('c_akun/insertAkun'); else echo site_url("c_akun/updateNasabah/".$username); ?>">
+                  <form class="form-horizontal" method="post" action="<?php if($page_title == 'Buat Akun') echo site_url('akun/insertAkun'); else echo site_url("akun/updateNasabah/".$username); ?>">
                     
                     <div class="form-group row">
                       <label class="col-sm-2 form-control-label">Tipe Akun</label>
@@ -69,7 +69,7 @@
                  
                     <div class="form-group row">
                       <div class="col-sm-4 offset-sm-2">
-                        <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_akun'); ?>">Batal</a>
+                        <a type="submit" class="btn btn-secondary" href="<?php echo site_url('akun'); ?>">Batal</a>
                         <button type="submit" class="btn btn-primary">Buat Akun</button>
                       </div>
                     </div>
@@ -87,7 +87,7 @@
       var tipeAkun = $("#tipeAkun").val();
       $.ajax({
         type: "POST",
-        url : "<?php echo site_url('c_akun/get_detail_form'); ?>",
+        url : "<?php echo site_url('akun/get_detail_form'); ?>",
         data: "tipeAkun="+tipeAkun,
         cache:false,
         success: function(data){

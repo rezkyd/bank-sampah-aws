@@ -35,7 +35,7 @@
             <div class="col-lg-6 col-md-12">
               <div id="new-updates" class="wrapper recent-updated">
                 <div id="updates-header" class="card-header d-flex justify-content-between align-items-center">
-                  <h2 class="h5 display"><a href="<?php echo site_url('c_jemput/jadwalPenjemputan/Menunggu Penjemputan');?>">Menunggu Penjemputan</a></h2>
+                  <h2 class="h5 display"><a href="<?php echo site_url('jemput/jadwalPenjemputan/Menunggu Penjemputan');?>">Menunggu Penjemputan</a></h2>
                   <?php if($countPickupPending>0) echo "<div class='badge badge-primary'> $countPickupPending pesanan</div>";?>
                   <a data-toggle="collapse" data-parent="#new-updates" href="#pickupPending" aria-expanded="true" aria-controls="updates-box"><i class="fa fa-angle-down"></i></a>
                 </div>
@@ -61,7 +61,7 @@
                          <li class="d-flex justify-content-between"> 
                           <div class="left-col d-flex ">
                             <div class="icon">
-                              <a  href="<?php echo base_url()."index.php/c_jemput/detailPenjemputan/".$data['idJemput']; ?>" >
+                              <a  href="<?php echo base_url()."index.php/jemput/detailPenjemputan/".$data['idJemput']; ?>" >
                                 <?php echo '#'.$data['idJemput']?>
                               </a>
                             </div>
@@ -82,7 +82,7 @@
             <div class="col-lg-6 col-md-12">
               <div id="new-updates" class="wrapper recent-updated">
                 <div id="updates-header" class="card-header d-flex justify-content-between align-items-center">
-                  <h2 class="h5 display"><a href="<?php echo site_url('c_jemput/jadwalPenjemputan/Menjemput Pesanan');?>">Menjemput Pesanan</a></h2>
+                  <h2 class="h5 display"><a href="<?php echo site_url('jemput/jadwalPenjemputan/Menjemput Pesanan');?>">Menjemput Pesanan</a></h2>
                     <?php if($countPickupOrder>0) echo "<div class='badge badge-primary'> $countPickupOrder pesanan </div>";?>
                   <a data-toggle="collapse" data-parent="#new-updates" href="#pickupOrder" aria-expanded="true" aria-controls="updates-box"><i class="fa fa-angle-down"></i></a>
                 </div>
@@ -108,7 +108,7 @@
                          <li class="d-flex justify-content-between"> 
                           <div class="left-col d-flex ">
                             <div class="icon">
-                              <a href="<?php echo base_url()."index.php/c_jemput/detailPenjemputan/".$data['idJemput']; ?>" >
+                              <a href="<?php echo base_url()."index.php/jemput/detailPenjemputan/".$data['idJemput']; ?>" >
                                 <?php echo '#'.$data['idJemput']?>
                               </a>
                             </div>

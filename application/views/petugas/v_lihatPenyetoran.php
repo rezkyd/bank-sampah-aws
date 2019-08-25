@@ -4,7 +4,7 @@
       <div class="breadcrumb-holder">   
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
             <li class="breadcrumb-item active">Penyetoran Sampah</li>
           </ul>
         </div>
@@ -14,7 +14,7 @@
         <div class="container-fluid">
           <header> 
             <h1 class="h3">Penyetoran Sampah</h1> <br>
-            <a id="buat" href="<?php echo site_url('c_penyetoran/tambahPenyetoran');?>" class="btn btn-info"><i class="fa fa-plus-circle"> </i> Tambah Transaksi Penyetoran </a>
+            <a id="buat" href="<?php echo site_url('penyetoran/tambahPenyetoran');?>" class="btn btn-info"><i class="fa fa-plus-circle"> </i> Tambah Transaksi Penyetoran </a>
            </header>
           
           <div class="row">
@@ -45,7 +45,7 @@
                             <td><?php echo $data['username']; ?></td>
                             <td><?php echo $data['tanggal']; ?></td>
                             <td><?php echo "Rp. ".$data['kredit'].",00"; ?></td>
-                            <td><a id="detail" class="btn btn-sm btn-primary" href="<?php echo site_url('c_penyetoran/detailPenyetoran?noNota='.$data['noNota']); ?>">Detail</td>
+                            <td><a id="detail" class="btn btn-sm btn-primary" href="<?php echo site_url('penyetoran/detailPenyetoran?noNota='.$data['noNota']); ?>">Detail</td>
                             <td><a id="hapus" class="btn btn-sm btn-danger" href="#" data-toggle="modal" data-target="#hapus-modal"><i class="fa fa-trash"></i></td>
                         </tr>
                         <?php $no++;} ?> 
@@ -65,12 +65,12 @@
             </div>
             <div class="modal-body"><center>
 
-                <form method="post" action="<?php echo site_url('c_penyetoran/hapusPenyetoran?id='.$data['noNota']."&kredit=".$data['kredit']."&user=".$data['username']);?>">
+                <form method="post" action="<?php echo site_url('penyetoran/hapusPenyetoran?id='.$data['noNota']."&kredit=".$data['kredit']."&user=".$data['username']);?>">
                     <div class="form-group">
                         <p>Apakah anda akan menghapus transaksi?</p>
                     </div>
                     <p class="text-center">
-                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_penyetoran'); ?>">Tidak</a>
+                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('penyetoran'); ?>">Tidak</a>
                       <button class="btn btn-primary" type="submit" name="status">Ya</button> <br><br>
                     </p>
                 </form>

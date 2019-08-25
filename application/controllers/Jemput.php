@@ -1,7 +1,7 @@
     <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_jemput extends CI_Controller {   
+class Jemput extends CI_Controller {   
 
     function __construct() {
         parent::__construct();
@@ -248,14 +248,14 @@ class C_jemput extends CI_Controller {
                     ?>
                     <script type="text/javascript">
                         alert("Status berhasil diubah!");
-                        window.location = "<?php echo site_url('c_jemput/detailPenjemputan/'.$idJemput) ?>"
+                        window.location = "<?php echo site_url('jemput/detailPenjemputan/'.$idJemput) ?>"
                     </script>
                     <?php
                 }else if ($tipe =='Driver'){
                     ?>
                     <script type="text/javascript">
                         alert("Status berhasil diubah!");
-                        window.location = "<?php echo site_url('c_jemput/detailPenjemputan/'.$idJemput) ?>"
+                        window.location = "<?php echo site_url('jemput/detailPenjemputan/'.$idJemput) ?>"
                     </script>
                     <?php
                 }
@@ -263,7 +263,7 @@ class C_jemput extends CI_Controller {
                     ?>
                     <script type="text/javascript">
                         alert("Status Gagal diubah!");
-                        window.location = "<?php echo site_url("c_jemput/detailPenjemputan") ?>"
+                        window.location = "<?php echo site_url("jemput/detailPenjemputan") ?>"
                     </script>
                     <?php
             }
@@ -298,14 +298,14 @@ class C_jemput extends CI_Controller {
                 ?>
                 <script type="text/javascript">
                     alert("Status berhasil diubah!");
-                    window.location = "<?php echo site_url('c_jemput/detailPenjemputan/'.$idJemput) ?>"
+                    window.location = "<?php echo site_url('jemput/detailPenjemputan/'.$idJemput) ?>"
                 </script>
                 <?php
             }else{
                 ?>
                 <script type="text/javascript">
                     alert("Status Gagal diubah!");
-                    window.location = "<?php echo site_url("c_jemput/detailPenjemputan") ?>"
+                    window.location = "<?php echo site_url("jemput/detailPenjemputan") ?>"
                 </script>
                 <?php
             }

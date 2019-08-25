@@ -1,7 +1,7 @@
  <div class="breadcrumb-holder">   
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('c_nasabah/profilNasabah');?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('nasabah/profilNasabah');?>">Beranda</a></li>
             <li class="breadcrumb-item active">Penyetoran Sampah</li>
           </ul>
         </div>
@@ -37,7 +37,7 @@
                             <td><?php echo $data['username']; ?></td>
                             <td><?php echo $data['tanggal']; ?></td>
                             <td><?php echo "Rp. ".$data['kredit'].",00"; ?></td>
-                            <td><a id="detail" class="btn btn-sm btn-primary" href="<?php echo base_url()."index.php/c_nasabah/cekDetailPenyetoran/".$data['noNota']; ?>">Detail</td>
+                            <td><a id="detail" class="btn btn-sm btn-primary" href="<?php echo base_url()."index.php/nasabah/cekDetailPenyetoran/".$data['noNota']; ?>">Detail</td>
                         </tr>
                         <?php $no++;} ?> 
                     </tbody>
@@ -56,12 +56,12 @@
             </div>
             <div class="modal-body"><center>
 
-                <form method="post" action="<?php echo site_url('c_penyetoran/hapusPenyetoran?id='.$data['noNota']."&kredit=".$data['kredit']."&user=".$data['username']);?>">
+                <form method="post" action="<?php echo site_url('penyetoran/hapusPenyetoran?id='.$data['noNota']."&kredit=".$data['kredit']."&user=".$data['username']);?>">
                     <div class="form-group">
                         <p>Apakah anda akan menghapus transaksi?</p>
                     </div>
                     <p class="text-center">
-                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_penyetoran'); ?>">Tidak</a>
+                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('penyetoran'); ?>">Tidak</a>
                       <button class="btn btn-primary" type="submit" name="status">Ya</button> <br><br>
                     </p>
                 </form>

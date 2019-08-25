@@ -45,7 +45,7 @@ class C_pengunjung extends CI_Controller {
                 ?>
                 <script type="text/javascript">
                     alert("Login Berhasil!");
-                    window.location = "<?php echo site_url('c_nasabah/profilNasabah') ?>";
+                    window.location = "<?php echo site_url('nasabah/profilNasabah') ?>";
                 </script>
                 <?php 
             }else if ($cekPetugas > 0) {
@@ -63,7 +63,7 @@ class C_pengunjung extends CI_Controller {
                 ?>
                 <script type="text/javascript">
                     alert("Login Berhasil!");
-                    window.location = "<?php echo site_url('c_akun/berandaPetugas') ?>";
+                    window.location = "<?php echo site_url('akun/berandaPetugas') ?>";
                 </script>
                 <?php
             }else {

@@ -10,13 +10,13 @@
                                     <a href="<?php echo site_url('');?>">Beranda </a>
                                 </li>
                                 <li >
-                                      <a href="<?php echo site_url('c_pengunjung/profilBSM');?>">profil</a>
+                                      <a href="<?php echo site_url('pengunjung/profilBSM');?>">profil</a>
                                 </li>
                                 <li >
-                                    <a href="<?php echo site_url('c_pengunjung/cekHarga');?>">Harga Sampah BSM</a>
+                                    <a href="<?php echo site_url('pengunjung/cekHarga');?>">Harga Sampah BSM</a>
                                 </li>
                                 <li >
-                                    <a href="<?php echo site_url('c_pengunjung/infonasabah');?>">Info Nasabah</a>
+                                    <a href="<?php echo site_url('pengunjung/infonasabah');?>">Info Nasabah</a>
                                 </li>
                             </ul>
                         </div>
@@ -93,7 +93,7 @@
                         </div>
                         <h3 class="text-uppercase">Ingin Bergabung dengan kami?</h3>
                         <p class="text-center">
-                            <a href="<?php echo site_url('c_pengunjung/infonasabah');?>" class="btn btn-template-transparent-black btn-lg">Daftar Nasabah BSM</a>
+                            <a href="<?php echo site_url('pengunjung/infonasabah');?>" class="btn btn-template-transparent-black btn-lg">Daftar Nasabah BSM</a>
                         </p>
                     </div>
 
