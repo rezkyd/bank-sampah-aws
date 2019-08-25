@@ -2,7 +2,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Penarikan extends CI_Controller
+class C_penarikan extends CI_Controller
 {   
 
     function __construct() {
@@ -100,14 +100,14 @@ class Penarikan extends CI_Controller
             ?>
             <script type="text/javascript">
                 alert("Transaksi Berhasil Disimpan!");
-                window.location = "<?php echo site_url("penarikan") ?>"
+                window.location = "<?php echo site_url("c_penarikan") ?>"
             </script>
             <?php
         }else{
             ?>
             <script type="text/javascript">
                 alert("Transaksi Tidak Tersimpan!");
-                window.location = "<?php echo site_url("penarikan/tambahPenarikan") ?>"
+                window.location = "<?php echo site_url("c_penarikan/tambahPenarikan") ?>"
             </script>
             <?php
         }
@@ -137,7 +137,7 @@ class Penarikan extends CI_Controller
             ?>
             <script type="text/javascript">
                 alert("Data Berhasil Dihapus!");
-                window.location = "<?php echo site_url("penarikan") ?>"
+                window.location = "<?php echo site_url("c_penarikan") ?>"
             </script>
             <?php
         }else {

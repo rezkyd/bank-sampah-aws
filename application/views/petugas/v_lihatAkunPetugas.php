@@ -1,7 +1,7 @@
        <div class="breadcrumb-holder">   
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
             <li class="breadcrumb-item active">Data Akun</li>
           </ul>
         </div>
@@ -39,7 +39,7 @@
                             <td><?php echo $user['alamat']; ?></td>
                             <td><?php echo $user['email']; ?></td>
                             <td><?php echo $user['noHP']; ?></td>
-                            <td><a id="edit" class="btn btn-sm btn-primary" href="<?php echo base_url()."index.php/akun/editPetugas/".$user['username']; ?>">Edit</td>
+                            <td><a id="edit" class="btn btn-sm btn-primary" href="<?php echo base_url()."index.php/c_akun/editPetugas/".$user['username']; ?>">Edit</td>
                             <td><a id="hapus" class="btn btn-sm btn-danger" href="#" data-toggle="modal" data-target="#hapus-modal" >Delete</td>
                         </tr>
                         <?php $no++;} ?>
@@ -58,12 +58,12 @@
             </div>
             <div class="modal-body"><center>
 
-                <form method="post" action="<?php echo site_url('akun/hapusPetugas/'.$user['username']); ?>">
+                <form method="post" action="<?php echo site_url('c_akun/hapusPetugas/'.$user['username']); ?>">
                     <div class="form-group">
                         <p>Apakah anda akan menghapus akun <?php echo $user['username']?>?</p>
                     </div>
                     <p class="text-center">
-                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('akun'); ?>">Tidak</a>
+                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_akun'); ?>">Tidak</a>
                       <button class="btn btn-primary" type="submit" name="status">Ya</button> <br><br>
                     </p>
                 </form>

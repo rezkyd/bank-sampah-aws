@@ -1,8 +1,8 @@
        <div class="breadcrumb-holder">   
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('nasabah/profilNasabah');?>">Beranda</a></li>
-            <li class="breadcrumb-item active"><a href="<?php echo site_url('nasabah/jemputSampah');?>">Jemput Sampah</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('c_nasabah/profilNasabah');?>">Beranda</a></li>
+            <li class="breadcrumb-item active"><a href="<?php echo site_url('c_nasabah/jemputSampah');?>">Jemput Sampah</a></li>
             <li class="breadcrumb-item active">Lacak Penjemputan Sampah</li>
           </ul>
         </div>

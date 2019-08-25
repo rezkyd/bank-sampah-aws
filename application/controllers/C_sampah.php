@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sampah extends CI_Controller
+class C_Sampah extends CI_Controller
 {   
 	function __construct() {
         parent::__construct();

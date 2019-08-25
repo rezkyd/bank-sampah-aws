@@ -60,7 +60,7 @@
                             <h4 class="modal-title" id="Login">login nasabah BSM</h4>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="<?php echo site_url('pengunjung/login'); ?>">
+                            <form method="post" action="<?php echo site_url('c_pengunjung/login'); ?>">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="username" id="email_modal" placeholder="username">
                                 </div>
@@ -70,7 +70,7 @@
 
                                 <p class="text-center">
                                     <button class="btn btn-template-main" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button> <br><br>
-                                    <a href="<?php echo site_url('pengunjung/ubahPassword'); ?>" type="submit" name="lupa">Lupa Password?</a>
+                                    <a href="<?php echo site_url('c_pengunjung/ubahPassword'); ?>" type="submit" name="lupa">Lupa Password?</a>
                                 </p>
                             </form>
                             <p class="text-center text-muted">Belum Terdaftar? <br> Daftarkan akun anda pada kantor Bank Sampah Malang</p>

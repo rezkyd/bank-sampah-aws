@@ -37,16 +37,16 @@
         
        <div class="main-menu">
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li <?php if($tabDriver=='1'){ echo "class='active'";}?>> <a href="<?php echo site_url('akun/berandaPetugas');?>"> <i class="fa fa-user"> </i><span>Beranda</span></a></li>
+            <li <?php if($tabDriver=='1'){ echo "class='active'";}?>> <a href="<?php echo site_url('c_akun/berandaPetugas');?>"> <i class="fa fa-user"> </i><span>Beranda</span></a></li>
             <li > <a href="#pages-nav-list" data-toggle="collapse" aria-expanded="false"><i class="fa fa-truck"></i><span>Jemput Sampah</span>
                 <div class="arrow pull-right"><i class="fa fa-angle-down"></i></div></a>
                 <ul id="pages-nav-list" class="collapse list-unstyled">
-                  <li <?php if($tabDriver=='2'){ echo "class='active'";}?>> <a href="<?php echo site_url('jemput/jadwalHarian');?>">Jadwal Hari Ini</a></li>
-                  <li <?php if($tabDriver=='3'){ echo "class='active'";}?>> <a href="<?php echo site_url('jemput/jadwalPenjemputan/'.'Menunggu Penjemputan');?>">Semua Jadwal</a></li>
+                  <li <?php if($tabDriver=='2'){ echo "class='active'";}?>> <a href="<?php echo site_url('c_jemput/jadwalHarian');?>">Jadwal Hari Ini</a></li>
+                  <li <?php if($tabDriver=='3'){ echo "class='active'";}?>> <a href="<?php echo site_url('c_jemput/jadwalPenjemputan/'.'Menunggu Penjemputan');?>">Semua Jadwal</a></li>
                 </ul>
             </li>
-            <li <?php if($tabDriver=='4'){ echo "class='active'";}?>> <a href="<?php echo site_url('akun/ubahPasswordPetugas');?>"> <i class="fa fa-key"></i><span>Ubah Password</span></a></li>
-            <li> <a href="<?php echo site_url('pengunjung/logout');?>"> <i class="fa fa-sign-out"></i><span>Logout</span></a></li>
+            <li <?php if($tabDriver=='4'){ echo "class='active'";}?>> <a href="<?php echo site_url('c_akun/ubahPasswordPetugas');?>"> <i class="fa fa-key"></i><span>Ubah Password</span></a></li>
+            <li> <a href="<?php echo site_url('c_pengunjung/logout');?>"> <i class="fa fa-sign-out"></i><span>Logout</span></a></li>
           </ul>
 
         </div>

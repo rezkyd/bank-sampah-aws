@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Nasabah extends CI_Controller {   
+class C_nasabah extends CI_Controller {   
 
     function __construct() {
         parent::__construct();
@@ -164,18 +164,18 @@ class Nasabah extends CI_Controller {
                 ?>
                 <script type="text/javascript">
                     alert("Pesanan Jemput Sampah Berhasil Dibuat!");
-                    window.location = "<?php echo site_url("nasabah/profilNasabah") ?>"
+                    window.location = "<?php echo site_url("c_nasabah/profilNasabah") ?>"
                 </script>
                 <?php
             }else{
                 ?>
                 <script type="text/javascript">
                     alert("Pesana Jemput Sampah Tidak Tersimpan!");
-                    window.location = "<?php echo site_url("nasabah/profilNasabah") ?>"
+                    window.location = "<?php echo site_url("c_nasabah/profilNasabah") ?>"
                 </script>
                 <?php
             }
-            redirect(site_url('nasabah/jemputSampah'),'refresh');
+            redirect(site_url('c_nasabah/jemputSampah'),'refresh');
         }else {
             ?>
             <script type="text/javascript">

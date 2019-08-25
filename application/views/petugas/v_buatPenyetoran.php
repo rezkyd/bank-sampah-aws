@@ -8,7 +8,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body row">
-                <form class="form-horizontal row" method="post" action="<?php if($tipe == 'Driver') echo site_url('penyetoran/rekapPenyetoranDriver'); else echo site_url('penyetoran/insertPenyetoran'); ?>">   
+                <form class="form-horizontal row" method="post" action="<?php if($tipe == 'Driver') echo site_url('c_penyetoran/rekapPenyetoranDriver'); else echo site_url('c_penyetoran/insertPenyetoran'); ?>">   
                     <div class="col-sm-6">
                         <div class="form-group row">
                           <label class="col-sm-4 form-control-label">No Nota</label>
@@ -131,9 +131,9 @@
                               <button type="button" class="delete-row btn btn-secondary">Hapus</button>
 
                               <?php  if ($tipe == 'Driver'){ ?>
-                                <a type="submit" class="btn btn-secondary" href="<?php echo site_url('jemput/detailPenjemputan/'.$idJemput); ?>">Batal</a>
+                                <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_jemput/detailPenjemputan/'.$idJemput); ?>">Batal</a>
                               <?php }else if($tipe == 'Admin'){?> 
-                                <a type="submit" class="btn btn-secondary" href="<?php echo site_url('penyetoran'); ?>">Batal</a>
+                                <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_penyetoran'); ?>">Batal</a>
                               <?php }?>
                               <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
@@ -286,7 +286,7 @@
           var kodeSampah=$(this).val();
           $.ajax({
               type : "POST",
-              url  : "<?php echo site_url('penyetoran/getHarga')?>",
+              url  : "<?php echo site_url('c_penyetoran/getHarga')?>",
               dataType : "JSON",
               data : {kodeSampah: kodeSampah},
               cache:false,
@@ -302,7 +302,7 @@
 
            $.ajax({
               type : "POST",
-              url  : "<?php echo site_url('penyetoran/getJenis')?>",
+              url  : "<?php echo site_url('c_penyetoran/getJenis')?>",
               dataType : "JSON",
               data : {kodeSampah: kodeSampah},
               cache:false,

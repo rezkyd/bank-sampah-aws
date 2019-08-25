@@ -1,7 +1,7 @@
        <div class="breadcrumb-holder">   
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
             <li class="breadcrumb-item active">Penjemputan sampah</li>
           </ul>
         </div>
@@ -68,7 +68,7 @@
                                 if ($tipe == 'Driver'){
                                   if($status == 'Menjemput Pesanan'){?>
                                     <!--Rekap Pesanan Driver-->
-                                      <a class="btn btn-primary" href="<?php echo site_url('penyetoran/tambahPenyetoran?user='.$username.'&id='.$idJemput);?>"  > <?php  echo $tombol; ?> </a> 
+                                      <a class="btn btn-primary" href="<?php echo site_url('c_penyetoran/tambahPenyetoran?user='.$username.'&id='.$idJemput);?>"  > <?php  echo $tombol; ?> </a> 
                                   <?php } else if($status != 'Menunggu Verifikasi') {?> 
                                        <!-- tombol driver  -->
                                        <button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#status-modal"  > <?php  echo $tombol; ?> </button> 
@@ -79,7 +79,7 @@
                                       <button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#status-modal"  > <?php  echo $tombol; ?> </button> 
                                   <?php }else if ($status == 'Menunggu Verifikasi'){?>
                                       <!-- verifikasi admin -->
-                                      <a class="btn btn-primary" href="<?php echo site_url('penyetoran/detailPenyetoran?noNota='.$noNota.'&id='.$idJemput);?>"  > <?php  echo $tombol; ?> </a>  
+                                      <a class="btn btn-primary" href="<?php echo site_url('c_penyetoran/detailPenyetoran?noNota='.$noNota.'&id='.$idJemput);?>"  > <?php  echo $tombol; ?> </a>  
                             <?php }}}?>
                           </td>
                           
@@ -114,7 +114,7 @@
             </div>
             <div class="modal-body"><center>
 
-                <form method="post" action="<?php echo site_url('jemput/updateStatus'); ?>">
+                <form method="post" action="<?php echo site_url('c_jemput/updateStatus'); ?>">
                     <div class="form-group">
                         <p> Status penjemputan sampah akan diubah menjadi <?php echo $nextStat;?> ?</p>
                         <input type="hidden" name="nextStat" id="nextStat" value="<?= $nextStat?>">
@@ -124,7 +124,7 @@
                         <input type="hidden" name="driver" value="<?= $this->session->userdata('nama')?>"><?php }?>
                     </div>
                     <p class="text-center">
-                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('jemput/detailPenjemputan/'.$idJemput); ?>">Tidak</a>
+                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_jemput/detailPenjemputan/'.$idJemput); ?>">Tidak</a>
                       <button class="btn btn-primary" type="submit" name="status">Ya</button> <br><br>
                     </p>
                 </form>
@@ -142,7 +142,7 @@
             </div>
             <div class="modal-body"><center>
 
-                <form method="post" action="<?php echo site_url('jemput/tolakPenjemputan'); ?>">
+                <form method="post" action="<?php echo site_url('c_jemput/tolakPenjemputan'); ?>">
                     <div class="form-group">
                         <p>Masukkan alasan penjemputan sampah ditolak?</p>
                         <input type="textArea" class="form-control" name="alasan" style="width: 300px" required=""></textarea>
@@ -150,7 +150,7 @@
                         <input type="hidden" name="username" value="<?= $username?>">
                     </div>
                     <p class="text-center">
-                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('jemput/detailPenjemputan/'.$idJemput); ?>">Tidak</a>
+                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_jemput/detailPenjemputan/'.$idJemput); ?>">Tidak</a>
                       <button class="btn btn-primary" type="submit" name="status">Kirim</button> <br><br>
                     </p>
                 </form>

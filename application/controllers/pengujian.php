@@ -51,14 +51,14 @@ class pengujian extends CI_Controller
                 ?>
                 <script type="text/javascript">
                     alert("Transaksi Berhasil Disimpan!");
-                    window.location = "<?php echo site_url("penarikan") ?>"
+                    window.location = "<?php echo site_url("c_penarikan") ?>"
                 </script>
                 <?php
             }else{
                 ?>
                 <script type="text/javascript">
                     alert("Transaksi Tidak Tersimpan!");
-                    window.location = "<?php echo site_url("penarikan/tambahPenarikan") ?>"
+                    window.location = "<?php echo site_url("c_penarikan/tambahPenarikan") ?>"
                 </script>
                 <?php
             }

@@ -2,7 +2,7 @@
     <div class="breadcrumb-holder">
       <div class="container-fluid">
         <ul class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
           <li class="breadcrumb-item"><a href="v_lihatPenyetoran.php"> Penarikan Saldo</a></li>
           <li class="breadcrumb-item active">Buat Penarikan Saldo</li>
         </ul>
@@ -18,7 +18,7 @@
           <div class="col-lg-8">
             <div class="card">
               <div class="card-body">
-                <form class="form-horizontal" method="post" action="<?php if($page_title == 'Buat Penarikan') echo site_url('penarikan/insertPenarikan'); else echo site_url('penarikan/updatePenarikan'); ?>">
+                <form class="form-horizontal" method="post" action="<?php if($page_title == 'Buat Penarikan') echo site_url('c_penarikan/insertPenarikan'); else echo site_url('c_penarikan/updatePenarikan'); ?>">
                   <div class="form-group row">
                     <label class="col-sm-3 form-control-label">No Nota</label>
                     <div class="col-sm-4">
@@ -69,7 +69,7 @@
              </div>
              <div class="form-group row">
               <div class="col-sm-4 offset-sm-2">
-                <a type="submit" class="btn btn-secondary" href="<?php echo site_url('penarikan'); ?>">Batal</a>
+                <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_penarikan'); ?>">Batal</a>
                 <button type="submit" name="simpan" class="btn btn-primary" id="simpan">Simpan</button>
               </div>
             </div>
@@ -110,7 +110,7 @@
       var username=$(this).val();
       $.ajax({
           type : "POST",
-          url  : "<?php echo site_url('penarikan/getSaldo')?>", //Memanggil method getSaldo
+          url  : "<?php echo site_url('c_penarikan/getSaldo')?>", //Memanggil method getSaldo
           dataType : "JSON",
           data : {username: username},
           cache:false,

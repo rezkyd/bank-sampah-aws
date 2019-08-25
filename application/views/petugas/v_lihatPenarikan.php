@@ -1,7 +1,7 @@
       <div class="breadcrumb-holder">   
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo site_url('akun/berandaPetugas');?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo site_url('c_akun/berandaPetugas');?>">Beranda</a></li>
             <li class="breadcrumb-item active">Transaksi Penarikan Saldo</li>
           </ul>
         </div>
@@ -11,7 +11,7 @@
         <div class="container-fluid">
           <header> 
             <h1 class="h3">Penarikan Sampah</h1> <br>
-            <a id="buat" href="<?php echo site_url('penarikan/tambahPenarikan');?>" class="btn btn-info"><i class="fa fa-plus-circle"> </i> Tambah Transaksi Penarikan </a>
+            <a id="buat" href="<?php echo site_url('c_penarikan/tambahPenarikan');?>" class="btn btn-info"><i class="fa fa-plus-circle"> </i> Tambah Transaksi Penarikan </a>
            </header>
           
           <div class="row">
@@ -61,12 +61,12 @@
             </div>
             <div class="modal-body"><center>
 
-                <form method="post" action="<?php echo site_url('penarikan/hapusPenarikan?id='.$data['noNota']."&debet=".$data['debet']."&user=".$data['username']); ?>">
+                <form method="post" action="<?php echo site_url('c_penarikan/hapusPenarikan?id='.$data['noNota']."&debet=".$data['debet']."&user=".$data['username']); ?>">
                     <div class="form-group">
                         <p>Apakah anda akan menghapus transaksi ?</p>
                     </div>
                     <p class="text-center">
-                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('penarikan'); ?>">Tidak</a>
+                      <a type="submit" class="btn btn-secondary" href="<?php echo site_url('c_penarikan'); ?>">Tidak</a>
                       <button class="btn btn-primary" type="submit" name="status">Ya</button> <br><br>
                     </p>
                 </form>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Penyetoran extends CI_Controller
+class C_penyetoran extends CI_Controller
 {   
     function __construct() {
         parent::__construct();
@@ -141,7 +141,7 @@ class Penyetoran extends CI_Controller
             ?>
             <script type="text/javascript">
                 alert("Transaksi Berhasil Disimpan!");
-                window.location = "<?php echo site_url("jemput/detailPenjemputan/$idJemput") ?>"
+                window.location = "<?php echo site_url("c_jemput/detailPenjemputan/$idJemput") ?>"
             </script>
             <?php
         }else{
@@ -217,7 +217,7 @@ class Penyetoran extends CI_Controller
             ?>
             <script type="text/javascript">
                 alert("Transaksi Berhasil Disimpan!");
-                window.location = "<?php echo site_url("penyetoran") ?>"
+                window.location = "<?php echo site_url("c_penyetoran") ?>"
             </script>
             <?php
         }else{
@@ -280,7 +280,7 @@ class Penyetoran extends CI_Controller
             ?>
             <script type="text/javascript">
                 alert("Transaksi Berhasil Disimpan!");
-                window.location = "<?php echo site_url('jemput/detailPenjemputan/'.$idJemput) ?>"
+                window.location = "<?php echo site_url('c_jemput/detailPenjemputan/'.$idJemput) ?>"
             </script>
             <?php
         }else{
@@ -317,7 +317,7 @@ class Penyetoran extends CI_Controller
             ?>
             <script type="text/javascript">
                 alert("Data Berhasil Dihapus!");
-                window.location = "<?php echo site_url("penyetoran") ?>"
+                window.location = "<?php echo site_url("c_penyetoran") ?>"
             </script>
             <?php
         }else {
@@ -389,7 +389,7 @@ class Penyetoran extends CI_Controller
 
                  );
             $data = $this->modPenyetoran->InsertDetail($data);
-            redirect(site_url('penyetoran/tambahPenyetoran'.$data['noNota']),'refresh');
+            redirect(site_url('c_penyetoran/tambahPenyetoran'.$data['noNota']),'refresh');
         }else {
             ?>
             <script type="text/javascript">
